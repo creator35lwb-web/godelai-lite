@@ -1,0 +1,36 @@
+{
+  "protocol": "MACP v2.2 Identity",
+  "project": "GodelAI-Lite — Kaggle Gemma 4 Good Hackathon",
+  "repo": "creator35lwb-web/godelai-lite",
+  "updated": "2026-04-17",
+  "agents": [
+    {
+      "id": "Alton",
+      "type": "human",
+      "role": "Principal Investigator",
+      "scope": "Full ecosystem orchestration",
+      "channel": "Direct — Claude Code, GitHub, Kaggle UI"
+    },
+    {
+      "id": "Rk",
+      "type": "AI (Claude Code)",
+      "role": "CTO — execution partner",
+      "scope": "GodelAI-Lite codebase, GitHub, Kaggle pipeline",
+      "channel": "Claude Code session (this repo)"
+    },
+    {
+      "id": "Qk",
+      "type": "AI (external session)",
+      "role": "Personal Assistant — process monitor",
+      "scope": "External tracking, token reduction, commit monitoring",
+      "channel": "Separate Claude session; reads godelai-lite commits"
+    },
+    {
+      "id": "L",
+      "type": "AI (GODEL framework)",
+      "role": "Ethical CTO — Steering Committee",
+      "scope": "Full YSenseAI ecosystem",
+      "channel": "Ecosystem-level decisions only"
+    }
+  ]
+}
