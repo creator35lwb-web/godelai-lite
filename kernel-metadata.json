@@ -1,0 +1,14 @@
+{
+  "id": "creator35lwb/godelai-lite-memory-for-gemma-4",
+  "title": "GodelAI-Lite: Memory for Gemma 4",
+  "code_file": "godelai-lite-kaggle.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [],
+  "competition_sources": ["gemma-4-good-hackathon"],
+  "kernel_sources": []
+}
