@@ -47,3 +47,4 @@ kaggle.json
 
 # Agent System
 .qwen/
+build_notebook.py
