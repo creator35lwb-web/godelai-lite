@@ -70,3 +70,6 @@
 1085.9s	69	  [Baseline] What is my name and profession?: FAIL
 1094.7s	70	  [Baseline] Where do I work?: FAIL
 1109.0s	71	  [Baseline] What am I currently researching?: FAIL
+1109.0s	73	Test 2/3 -- Response Consistency
+1594.4s	74	  [GodelAI-Lite] TF-IDF cosine avg: 0.4356
+2099.7s	75	  [Baseline] TF-IDF cosine avg: 0.6749
