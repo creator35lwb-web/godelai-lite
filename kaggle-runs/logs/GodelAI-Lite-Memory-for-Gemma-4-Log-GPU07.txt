@@ -1,0 +1,47 @@
+6.3s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.3s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.3s 3 0.00s - to python to disable frozen modules.
+6.3s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.9s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.9s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.9s 7 0.00s - to python to disable frozen modules.
+6.9s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+11.0s 9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 117.1 MB/s eta 0:00:00
+11.0s 10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.7/383.7 kB 28.7 MB/s eta 0:00:00
+11.0s 11 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 645.5/645.5 kB 39.4 MB/s eta 0:00:00
+11.1s 12 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 106.2 MB/s eta 0:00:00
+11.2s 13 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 117.1 MB/s eta 0:00:00
+11.2s 14 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.7/383.7 kB 28.7 MB/s eta 0:00:00
+11.2s 15 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 645.5/645.5 kB 39.4 MB/s eta 0:00:00
+11.2s 16 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 106.2 MB/s eta 0:00:00
+30.9s 17 Setup complete. transformers==5.5.4
+43.1s 18 PyTorch : 2.10.0+cu128
+43.1s 19 CUDA    : True
+43.2s 20 Accelerator : GPU -- Tesla P100-PCIE-16GB
+43.2s 21 VRAM        : 17.1 GB
+43.2s 22 dtype       : float16
+43.2s 23 
+43.2s 24 Final device: cuda | dtype: torch.float16
+46.5s 25 Traceback (most recent call last):
+46.5s 26 File "<string>", line 1, in <module>
+46.5s 27 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 131, in execute_notebook
+46.5s 28 raise_for_execution_errors(nb, output_path)
+46.5s 29 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 251, in raise_for_execution_errors
+46.5s 30 raise error
+46.5s 31 papermill.exceptions.PapermillExecutionError:
+46.5s 32 ---------------------------------------------------------------------------
+46.5s 33 Exception encountered at "In [7]":
+46.5s 34 File "<tokenize>", line 93
+46.5s 35 out[0, inputs['input_ids'].shape[1]:].cpu(),
+46.5s 36 ^
+46.5s 37 IndentationError: unindent does not match any outer indentation level
+46.5s 38 
+46.5s 39 
+48.7s 40 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+48.7s 41 cells[i][c] = re.sub('\\\\\|', '|', cell)
+48.8s 42 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+48.8s 43 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+49.5s 44 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+49.8s 45 [NbConvertApp] Writing 45338 bytes to __notebook__.ipynb
+52.3s 46 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+53.3s 47 [NbConvertApp] Writing 415024 bytes to __results__.html
