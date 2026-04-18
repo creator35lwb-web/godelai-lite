@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "mempalace"
+version = "0.1.0"
+description = "Inference-time memory framework for small language models — part of the GodelAI ecosystem"
+authors = [{ name = "Alton Lee Wei Bin", email = "creator35lwb@gmail.com" }]
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0",
+    "transformers>=5.0",
+    "scikit-learn>=1.3",
+    "numpy>=1.24",
+]
+
+[project.urls]
+Homepage = "https://github.com/creator35lwb-web/godelai-lite"
+Repository = "https://github.com/creator35lwb-web/godelai-lite"
+
+[tool.setuptools.packages.find]
+include = ["mempalace*"]
