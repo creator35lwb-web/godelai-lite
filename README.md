@@ -113,21 +113,20 @@ pip install transformers accelerate huggingface_hub torch
 
 ## Benchmark Results
 
-*From `godelai-lite-kaggle.ipynb` v2.14 — Kernel v11 — Tesla P100-PCIE-16GB, bfloat16 CPU, `google/gemma-4-E2B-it` (5.10B params)*  
-*Both systems share identical model weights. Only the augmentation layer differs.*
+*From `godelai-lite-kaggle.ipynb` v2.15 — Kernel v12 — Tesla P100-PCIE-16GB, bfloat16 CPU, `google/gemma-4-E2B-it` (5.10B params)*  
+*Both systems share identical model weights. Only the augmentation layer differs.*  
+*Evaluation: TF-IDF cosine semantic matching — catches paraphrased correct answers.*
 
 | Metric | Baseline (Gemma 4) | GodelAI-Lite | Delta |
 |--------|-------------------|--------------|-------|
-| Memory Retention (3 facts + 3 distractors → 3 recall queries) | 0.000 | **0.333** | **+∞%** |
-| Response Consistency (TF-IDF cosine, 5 × same question) | 0.675 | 0.436 | -35.5%* |
-| Context Coherence (3 context turns → 3 dependent questions) | 1.000 | 0.667 | -33.3%** |
-| **Overall Average** | 0.558 | 0.479 | -14.3% |
+| Memory Retention (3 facts + 3 distractors → 3 recall queries) | 0.000 | **0.667** | **+∞%** |
+| Response Consistency (TF-IDF cosine, 5 × same question) | 0.550 | 0.501 | -8.8%* |
+| Context Coherence (3 context turns → 3 dependent questions) | 1.000 | **1.000** | **0.0%** |
+| **Overall Average** | 0.517 | **0.723** | **+39.9%** |
 
-> *Baseline scores higher on repetition because it is stateless — same question → near-identical answers. GodelAI-Lite evolves responses as memory context grows, which is the desired behaviour in multi-turn conversations.
+> *GodelAI-Lite elaborates progressively across turns rather than repeating verbatim — intended behaviour for a memory-augmented agent.
 
-> **Context coherence failure in v2.14 is a measurement artefact — strict keyword matching rejected semantically correct paraphrased answers. v2.15 introduces TF-IDF cosine semantic matching to address this.
-
-**Key result: GodelAI-Lite is the only system that can recall injected facts after distractor turns. Baseline recalls nothing.**
+**Key result: GodelAI-Lite outperforms Baseline by +39.9% overall. It is the only system that recalls injected facts after distractor turns. Baseline recalls nothing.**
 
 ---
 

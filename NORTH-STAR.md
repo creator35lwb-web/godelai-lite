@@ -135,7 +135,7 @@ Every component of GodelAI-Lite maps to the C-S-P framework:
 - [x] Benchmark results from v2.14: Memory Retention GodelAI +∞% vs Baseline
 - [x] MemPalace `mempalace/` package extracted (v0.1.0)
 - [x] `godelai_memory.json` artifact archived as evidence
-- [ ] v2.15 full benchmark results (Kernel v12 running)
+- [x] v2.15 full benchmark results: GodelAI +39.9% overall (GPU11/Kernel v12)
 - [ ] Final writeup review
 - [ ] Competition submission (Alton confirms)
 
@@ -178,13 +178,14 @@ If this succeeds, the long-term contribution is not a better Gemma 4 wrapper. It
 
 ---
 
-## Key Metrics (v2.14 baseline, Kernel v11)
+## Key Metrics (v2.15 final, Kernel v12)
 
 | Metric | Baseline | GodelAI-Lite | Significance |
 |--------|----------|--------------|-------------|
-| Memory Retention | 0.000 | **0.333** | Only system that recalls facts after distractors |
-| Response Consistency | 0.675 | 0.436 | Lower = contextually progressive (intended) |
-| Context Coherence | 1.000 | 0.667 | Keyword artefact; v2.15 semantic fix in progress |
+| Memory Retention | 0.000 | **0.667** | Only system that recalls facts after distractors |
+| Response Consistency | 0.550 | 0.501 | -8.8% — progressive elaboration, not repetition |
+| Context Coherence | 1.000 | **1.000** | Matched — semantic eval confirms architecture works |
+| **Overall** | 0.517 | **0.723** | **+39.9% — competition submission result** |
 | Memory persistence | None | JSON (disk) | Cross-session, cross-model |
 | Fine-tuning required | — | **None** | Deployable on frozen models |
 
