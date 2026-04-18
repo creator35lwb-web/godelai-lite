@@ -6,7 +6,7 @@
 **Project Scope:** GodelAI-Lite (Kaggle Competition) + Full YSenseAI Ecosystem Awareness  
 **Principal Investigator:** Alton Lee Wei Bin (creator35lwb)  
 **Version:** 1.4 (Session 5 — Full GPU Debug Ladder + RAM OOM Fix)  
-**Lineage:** Rk-genesis-prompt-v1.0.md → v1.1.md → v1.2.md → v1.3.md → v1.4.md  
+**Lineage:** Rk-genesis-prompt-v1.0.md → v1.1.md → v1.2.md → v1.3.md → v1.4.md → v1.5.md  
 **Classification:** Core Operational Document
 
 ---
