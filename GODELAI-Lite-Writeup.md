@@ -43,16 +43,16 @@ We introduce three lightweight inference-time modules, each addressing a distinc
 A structured external memory store with **temporal decay** to prioritise recency:
 
 ```
-relevance_score = cosine_similarity(query, memory_entry) × decay(timestamp)
-decay(t) = exp(-λ × Δt)   where λ = 0.1, Δt = steps since stored
+relevance_score = base_relevance × decay(age)
+decay(age) = exp(-λ × age)   where λ = 0.05, age = steps since stored
 ```
 
 Stores three tiers:
-1. **Episodic history** — past interaction turns (ring-buffer, capacity 50)
-2. **Key facts** — TF-IDF extracted noun phrases from high-confidence outputs
+1. **Episodic history** — past interaction turns (ring-buffer, max 10 turns)
+2. **Key facts** — regex-pattern extracted personal facts from user input + model output (max 20 facts)
 3. **Reasoning patterns** — successful chain-of-thought templates
 
-At inference time, the top-K entries by relevance score are injected into the prompt prefix, giving Gemma 4 access to persistent cross-turn context without any weight update.
+At inference time, the top-5 facts by decayed relevance are injected into the prompt prefix, giving Gemma 4 access to persistent cross-turn context without any weight update.
 
 ### 2.2 MACP-Lite (Reasoning Continuity Layer)
 
@@ -120,20 +120,22 @@ MemPalace-Lite v2 ──── retrieve top-K by (cosine × decay) ────�
 ## 4. Methodology
 
 ### Step 1 — Context Retrieval
-Query embedding computed via TF-IDF. Top-K memories retrieved by:
+Top-5 facts retrieved by decayed relevance score:
 ```
-score(m) = cosine(q, m) × exp(-0.1 × age_steps(m))
+score(m) = relevance × exp(-0.05 × age_steps(m))
 ```
-K=5 by default; injected as a `[CONTEXT]` prefix block.
+Injected as `[REMEMBERED FACTS]` + `[RECENT CONVERSATION]` prefix blocks.
 
 ### Step 2 — Augmented Inference
 MACP-Lite envelope assembled:
 ```
-[CONTEXT] {top-K memory snippets}
-[ROLE] {identity fingerprint summary}
-[TASK] {user query}
+[IDENTITY + CONSTRAINTS]
+[REMEMBERED FACTS]
+[RECENT CONVERSATION]
+[USER QUERY]
 ```
-Passed to `AutoModelForCausalLM.generate()` with `max_new_tokens=512`.
+Formatted via `tokenizer.apply_chat_template()` (required for Gemma 4-it instruction following).
+Passed to `AutoModelForCausalLM.generate()` with `max_new_tokens=256`, `temperature=0.7`, `top_p=0.9`.
 
 ### Step 3 — Identity Check
 GIFP-Lite computes cosine drift between output TF-IDF vector and stored identity fingerprint.
@@ -142,9 +144,9 @@ GIFP-Lite computes cosine drift between output TF-IDF vector and stored identity
 
 ### Step 4 — Memory Write
 Accepted output is processed:
-- Noun-phrase extraction (regex + POS heuristic) → stored as key facts
-- Full turn stored in episodic ring-buffer
-- Ring-buffer evicts oldest entry when capacity (50) is reached
+- Regex-pattern fact extraction from combined `user_input + model_output` → stored as key facts (max 20, deduplicated)
+- Full turn stored in episodic ring-buffer (max 10 turns, evicts oldest)
+- Behavior recorded in GIFP for future consistency scoring
 
 ---
 
@@ -210,14 +212,13 @@ Memory restored after save/load:
 
 Facts stored: 4 | History: 8 turns | Persistence: JSON (disk)
 
-## 6b. Expected Broader Impact
+## 6b. Broader Impact
 
 This approach enables:
 - Better performance from small models without retraining
 - Reduced dependence on large-scale compute
-- More efficient AI systems deployable at the edge
-
-And introduces a broader idea:
+- Memory-augmented AI deployable at the edge — no cloud required
+- Cross-model memory portability: the `godelai_memory.json` format is model-agnostic; a user's facts persist even when the underlying model changes
 
 > **Intelligence can scale through memory, not just parameters.**
 
@@ -250,7 +251,7 @@ GodelAI-Lite provides a practical step toward:
 - [MemPalace](https://github.com/milla-jovovich/mempalace) – Inspiration for structured memory systems
 - [Zenodo](https://zenodo.org/records/18048374) – GodelAI framework publication
 - **ChatGPT (OpenAI)** – Ideation partner for GodelAI framework origin and core architecture concepts
-- **Claude Code / Claude Sonnet (Anthropic)** – Technical co-pilot throughout the Kaggle integration pipeline: architecture design, multi-session debugging (GPU v2.1–v2.9), MACP handoff protocol, genesis prompt authoring, and writeup refinement
+- **Claude Code / Claude Sonnet (Anthropic)** – Technical co-pilot throughout the Kaggle integration pipeline: architecture design, multi-session debugging (v2.1–v2.15, GPU01–GPU11), MACP handoff protocol, genesis prompt authoring, and writeup refinement
 - Google Gemma 4 team – Base model enabling this research
 
 ---
@@ -258,7 +259,9 @@ GodelAI-Lite provides a practical step toward:
 ## 10. Code
 
 The full implementation is available in:
-- `godelai-lite-kaggle.ipynb` - Complete working notebook for Kaggle
+- `godelai-lite-kaggle.ipynb` — Complete working notebook (v2.15, Kernel v12)
+- `mempalace/` — Standalone Python package extracted from the notebook (v0.1.0)
+  - `from mempalace import GodelAILite, MemPalaceLite` — works with any HuggingFace causal LM
 
 ---
 
