@@ -1,0 +1,93 @@
+11.0s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+11.0s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+11.0s 3 0.00s - to python to disable frozen modules.
+11.0s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+11.8s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+11.8s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+11.8s 7 0.00s - to python to disable frozen modules.
+11.8s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+17.3s 9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 95.4 MB/s eta 0:00:00
+17.4s 10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.7/383.7 kB 26.3 MB/s eta 0:00:00
+17.4s 11 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 645.5/645.5 kB 37.6 MB/s eta 0:00:00
+17.5s 12 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 81.0 MB/s eta 0:00:00
+17.5s 13 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 95.4 MB/s eta 0:00:00
+17.5s 14 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.7/383.7 kB 26.3 MB/s eta 0:00:00
+17.5s 15 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 645.5/645.5 kB 37.6 MB/s eta 0:00:00
+17.5s 16 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 81.0 MB/s eta 0:00:00
+34.6s 17 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.7/60.7 MB 25.2 MB/s eta 0:00:00
+34.8s 18 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.7/60.7 MB 25.2 MB/s eta 0:00:00
+51.7s 19 Setup complete. transformers==5.5.4
+68.5s 20 PyTorch : 2.10.0+cu128
+68.5s 21 CUDA    : True
+68.6s 22 Accelerator : GPU -- Tesla P100-PCIE-16GB
+68.6s 23 VRAM        : 17.1 GB
+68.6s 24 dtype       : float16
+68.6s 25 
+68.6s 26 Final device: cuda | dtype: torch.float16
+68.8s 27 Kaggle model path not found -- using HuggingFace download
+68.8s 28 Loading google/gemma-4-E4B-it...
+75.2s 29 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+75.2s 30 
+75.2s 31 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+75.3s 32 `torch_dtype` is deprecated! Use `dtype` instead!
+75.3s 33 
+75.3s 34 `torch_dtype` is deprecated! Use `dtype` instead!
+147.8s 35 Error named symbol not found at line 62 in file /src/csrc/ops.cu
+148.0s 36 Error named symbol not found at line 62 in file /src/csrc/ops.cu
+148.0s 37 
+148.0s 38 Error named symbol not found at line 62 in file /src/csrc/ops.cu
+151.9s 39 Kernel died while waiting for execute reply.
+151.9s 40 Traceback (most recent call last):
+151.9s 41 File "/usr/local/lib/python3.12/dist-packages/nbclient/client.py", line 949, in async_execute_cell
+151.9s 42 exec_reply = await self.task_poll_for_reply
+151.9s 43 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+151.9s 44 File "/usr/local/lib/python3.12/dist-packages/nbclient/client.py", line 730, in _async_poll_for_reply
+151.9s 45 msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
+151.9s 46 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+151.9s 47 File "/usr/local/lib/python3.12/dist-packages/nbclient/util.py", line 96, in ensure_async
+151.9s 48 result = await obj
+151.9s 49 ^^^^^^^^^
+151.9s 50 File "/usr/local/lib/python3.12/dist-packages/jupyter_client/channels.py", line 224, in get_msg
+151.9s 51 ready = await self.socket.poll(timeout)
+151.9s 52 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+151.9s 53 asyncio.exceptions.CancelledError
+151.9s 54 
+151.9s 55 During handling of the above exception, another exception occurred:
+151.9s 56 
+151.9s 57 Traceback (most recent call last):
+151.9s 58 File "<string>", line 1, in <module>
+151.9s 59 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 116, in execute_notebook
+151.9s 60 nb = papermill_engines.execute_notebook_with_engine(
+151.9s 61 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+151.9s 62 File "/usr/local/lib/python3.12/dist-packages/papermill/engines.py", line 49, in execute_notebook_with_engine
+151.9s 63 return self.get_engine(engine_name).execute_notebook(nb, kernel_name, **kwargs)
+151.9s 64 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+151.9s 65 File "/usr/local/lib/python3.12/dist-packages/papermill/engines.py", line 371, in execute_notebook
+151.9s 66 cls.execute_managed_notebook(nb_man, kernel_name, log_output=log_output, **kwargs)
+151.9s 67 File "/usr/local/lib/python3.12/dist-packages/papermill/engines.py", line 443, in execute_managed_notebook
+151.9s 68 return PapermillNotebookClient(nb_man, **final_kwargs).execute()
+151.9s 69 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+151.9s 70 File "/usr/local/lib/python3.12/dist-packages/papermill/clientwrap.py", line 45, in execute
+151.9s 71 self.papermill_execute_cells()
+151.9s 72 File "/usr/local/lib/python3.12/dist-packages/papermill/clientwrap.py", line 72, in papermill_execute_cells
+151.9s 73 self.execute_cell(cell, index)
+151.9s 74 File "/usr/local/lib/python3.12/dist-packages/nbclient/util.py", line 84, in wrapped
+151.9s 75 return just_run(coro(*args, **kwargs))
+151.9s 76 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+151.9s 77 File "/usr/local/lib/python3.12/dist-packages/nbclient/util.py", line 62, in just_run
+151.9s 78 return loop.run_until_complete(coro)
+151.9s 79 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+151.9s 80 File "/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+151.9s 81 return future.result()
+151.9s 82 ^^^^^^^^^^^^^^^
+151.9s 83 File "/usr/local/lib/python3.12/dist-packages/nbclient/client.py", line 953, in async_execute_cell
+151.9s 84 raise DeadKernelError("Kernel died")
+151.9s 85 nbclient.exceptions.DeadKernelError: Kernel died
+154.7s 86 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+154.7s 87 cells[i][c] = re.sub('\\\\\|', '|', cell)
+155.0s 88 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+155.0s 89 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+159.9s 90 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+160.2s 91 [NbConvertApp] Writing 47269 bytes to __notebook__.ipynb
+162.8s 92 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+163.3s 93 [NbConvertApp] Writing 414758 bytes to __results__.html

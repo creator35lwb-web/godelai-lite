@@ -1,0 +1,88 @@
+8.3s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.3s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.3s 3 0.00s - to python to disable frozen modules.
+8.3s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+9.1s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+9.1s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+9.1s 7 0.00s - to python to disable frozen modules.
+9.1s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+45.1s 9 [33mWARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7e46bdb4a5a0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/bitsandbytes/[0m[33m
+77.5s 10 [0m[33mWARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7e46bd9d2bd0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/bitsandbytes/[0m[33m
+110.6s 11 [0m[33mWARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7e46bd9d2de0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/bitsandbytes/[0m[33m
+144.6s 12 [0m[33mWARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7e46bd9c0440>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/bitsandbytes/[0m[33m
+180.6s 13 [0m[33mWARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7e46bd9c3170>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/bitsandbytes/[0m[33m
+212.6s 14 [0m[31mERROR: Could not find a version that satisfies the requirement bitsandbytes (from versions: none)[0m[31m
+212.6s 15 [0m[31mERROR: No matching distribution found for bitsandbytes[0m[31m
+236.5s 16 [0mPyTorch: 2.10.0+cpu
+236.5s 17 CUDA: False
+236.7s 18 CUDA: False
+236.7s 19 Loading google/gemma-4-E4B-it...
+300.8s 20 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/main/config.json
+300.8s 21 
+300.8s 22 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/main/config.json
+300.8s 23 Retrying in 1s [Retry 1/5].
+300.8s 24 
+300.8s 25 Retrying in 1s [Retry 1/5].
+365.9s 26 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/main/config.json
+365.9s 27 
+365.9s 28 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/main/config.json
+365.9s 29 Retrying in 1s [Retry 1/5].
+365.9s 30 
+365.9s 31 Retrying in 1s [Retry 1/5].
+367.1s 32 Failed (OSError): Can't load the configuration of 'google/gemma-4-E4B-it'. If you were trying to load it from 'https://huggingface.co/mode
+367.1s 33 Loading google/gemma-4-E2B-it...
+430.9s 34 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-4-E2B-it/resolve/main/config.json
+430.9s 35 
+430.9s 36 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-4-E2B-it/resolve/main/config.json
+430.9s 37 Retrying in 1s [Retry 1/5].
+430.9s 38 
+430.9s 39 Retrying in 1s [Retry 1/5].
+496.0s 40 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-4-E2B-it/resolve/main/config.json
+496.0s 41 
+496.0s 42 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-4-E2B-it/resolve/main/config.json
+496.0s 43 Retrying in 1s [Retry 1/5].
+496.0s 44 
+496.0s 45 Retrying in 1s [Retry 1/5].
+497.2s 46 Failed (OSError): Can't load the configuration of 'google/gemma-4-E2B-it'. If you were trying to load it from 'https://huggingface.co/mode
+497.2s 47 Loading google/gemma-2-2b-it...
+561.1s 48 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2-2b-it/resolve/main/config.json
+561.1s 49 
+561.1s 50 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2-2b-it/resolve/main/config.json
+561.1s 51 Retrying in 1s [Retry 1/5].
+561.1s 52 
+561.1s 53 Retrying in 1s [Retry 1/5].
+626.2s 54 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2-2b-it/resolve/main/config.json
+626.2s 55 
+626.2s 56 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2-2b-it/resolve/main/config.json
+626.2s 57 Retrying in 1s [Retry 1/5].
+626.2s 58 
+626.2s 59 Retrying in 1s [Retry 1/5].
+627.2s 60 Failed (OSError): Can't load the configuration of 'google/gemma-2-2b-it'. If you were trying to load it from 'https://huggingface.co/model
+629.8s 61 Traceback (most recent call last):
+629.8s 62 File "<string>", line 1, in <module>
+629.8s 63 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 131, in execute_notebook
+629.8s 64 raise_for_execution_errors(nb, output_path)
+629.8s 65 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 251, in raise_for_execution_errors
+629.8s 66 raise error
+629.8s 67 papermill.exceptions.PapermillExecutionError:
+629.8s 68 ---------------------------------------------------------------------------
+629.8s 69 Exception encountered at "In [7]":
+629.8s 70 ---------------------------------------------------------------------------
+629.8s 71 RuntimeError                              Traceback (most recent call last)
+629.8s 72 /tmp/ipykernel_16/1228009159.py in <cell line: 0>()
+629.8s 73 52
+629.8s 74 53 if model is None:
+629.8s 75 ---> 54     raise RuntimeError('All model candidates failed — check internet connectivity on this node.')
+629.8s 76 55
+629.8s 77 56 print(f'Model    : {MODEL_NAME}')
+629.8s 78 
+629.8s 79 RuntimeError: All model candidates failed — check internet connectivity on this node.
+629.8s 80 
+632.6s 81 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+632.6s 82 cells[i][c] = re.sub('\\\\\|', '|', cell)
+632.8s 83 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+632.8s 84 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+633.6s 85 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+634.0s 86 [NbConvertApp] Writing 47443 bytes to __notebook__.ipynb
+637.1s 87 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+638.3s 88 [NbConvertApp] Writing 410115 bytes to __results__.html

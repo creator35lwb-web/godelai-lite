@@ -1,0 +1,296 @@
+6.3s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.3s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.3s 3 0.00s - to python to disable frozen modules.
+6.3s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.9s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.9s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.9s 7 0.00s - to python to disable frozen modules.
+6.9s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+11.7s 9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 85.5 MB/s eta 0:00:00
+11.8s 10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.7/383.7 kB 36.1 MB/s eta 0:00:00
+11.8s 11 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 645.5/645.5 kB 47.2 MB/s eta 0:00:00
+11.9s 12 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.9/8.9 MB 104.4 MB/s eta 0:00:00
+12.0s 13 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 85.5 MB/s eta 0:00:00
+12.0s 14 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.7/383.7 kB 36.1 MB/s eta 0:00:00
+12.0s 15 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 645.5/645.5 kB 47.2 MB/s eta 0:00:00
+12.0s 16 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.9/8.9 MB 104.4 MB/s eta 0:00:00
+12.1s 17 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 73.8 MB/s eta 0:00:00
+12.1s 18 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 107.0 MB/s eta 0:00:00
+12.3s 19 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 73.8 MB/s eta 0:00:00
+12.3s 20 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 107.0 MB/s eta 0:00:00
+31.7s 21 ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+31.7s 22 bigframes 2.35.0 requires google-cloud-bigquery-storage<3.0.0,>=2.30.0, which is not installed.
+31.7s 23 ydata-profiling 4.18.1 requires numpy<2.4,>=1.22, but you have numpy 2.4.4 which is incompatible.
+31.7s 24 google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.
+31.7s 25 google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.3.3 which is incompatible.
+31.7s 26 dopamine-rl 4.1.2 requires gym<=0.25.2, but you have gym 0.26.2 which is incompatible.
+31.7s 27 tensorflow 2.19.0 requires numpy<2.2.0,>=1.26.0, but you have numpy 2.4.4 which is incompatible.
+31.7s 28 numba 0.60.0 requires numpy<2.1,>=1.22, but you have numpy 2.4.4 which is incompatible.
+31.9s 29 ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+31.9s 30 bigframes 2.35.0 requires google-cloud-bigquery-storage<3.0.0,>=2.30.0, which is not installed.
+31.9s 31 ydata-profiling 4.18.1 requires numpy<2.4,>=1.22, but you have numpy 2.4.4 which is incompatible.
+31.9s 32 google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.
+31.9s 33 google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.3.3 which is incompatible.
+31.9s 34 dopamine-rl 4.1.2 requires gym<=0.25.2, but you have gym 0.26.2 which is incompatible.
+31.9s 35 tensorflow 2.19.0 requires numpy<2.2.0,>=1.26.0, but you have numpy 2.4.4 which is incompatible.
+31.9s 36 numba 0.60.0 requires numpy<2.1,>=1.22, but you have numpy 2.4.4 which is incompatible.
+31.9s 37 
+31.9s 38 ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+31.9s 39 bigframes 2.35.0 requires google-cloud-bigquery-storage<3.0.0,>=2.30.0, which is not installed.
+31.9s 40 ydata-profiling 4.18.1 requires numpy<2.4,>=1.22, but you have numpy 2.4.4 which is incompatible.
+31.9s 41 google-colab 1.0.0 requires jupyter-server==2.14.0, but you have jupyter-server 2.12.5 which is incompatible.
+31.9s 42 google-colab 1.0.0 requires pandas==2.2.2, but you have pandas 2.3.3 which is incompatible.
+31.9s 43 dopamine-rl 4.1.2 requires gym<=0.25.2, but you have gym 0.26.2 which is incompatible.
+31.9s 44 tensorflow 2.19.0 requires numpy<2.2.0,>=1.26.0, but you have numpy 2.4.4 which is incompatible.
+31.9s 45 numba 0.60.0 requires numpy<2.1,>=1.22, but you have numpy 2.4.4 which is incompatible.
+33.7s 46 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.7/60.7 MB 33.0 MB/s eta 0:00:00
+33.9s 47 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.7/60.7 MB 33.0 MB/s eta 0:00:00
+43.8s 48 Setup complete. transformers==5.5.4
+56.5s 49 Traceback (most recent call last):
+56.5s 50 File "<string>", line 1, in <module>
+56.5s 51 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 131, in execute_notebook
+56.5s 52 raise_for_execution_errors(nb, output_path)
+56.5s 53 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 251, in raise_for_execution_errors
+56.5s 54 raise error
+56.5s 55 papermill.exceptions.PapermillExecutionError:
+56.5s 56 ---------------------------------------------------------------------------
+56.5s 57 Exception encountered at "In [2]":
+56.5s 58 ---------------------------------------------------------------------------
+56.5s 59 ImportError                               Traceback (most recent call last)
+56.5s 60 /tmp/ipykernel_23/2451410076.py in <cell line: 0>()
+56.5s 61 3 from typing import Dict, List
+56.5s 62 4 from dataclasses import dataclass, asdict
+56.5s 63 ----> 5 from transformers import AutoModelForCausalLM, AutoTokenizer, GenerationConfig
+56.5s 64 6 from sklearn.feature_extraction.text import TfidfVectorizer
+56.5s 65 7 from sklearn.metrics.pairwise import cosine_similarity
+56.5s 66 
+56.5s 67 /usr/local/lib/python3.12/dist-packages/transformers/utils/import_utils.py in __getattr__(self, name)
+56.5s 68 2205         elif name in self._class_to_module:
+56.5s 69 2206             try:
+56.5s 70 -> 2207                 module = self._get_module(self._class_to_module[name])
+56.5s 71 2208                 value = getattr(module, name)
+56.5s 72 2209             except (ModuleNotFoundError, RuntimeError, AttributeError) as e:
+56.5s 73 
+56.5s 74 /usr/local/lib/python3.12/dist-packages/transformers/utils/import_utils.py in _get_module(self, module_name)
+56.5s 75 2439             return importlib.import_module("." + module_name, self.__name__)
+56.5s 76 2440         except Exception as e:
+56.5s 77 -> 2441             raise e
+56.5s 78 2442
+56.5s 79 2443     def __reduce__(self):
+56.5s 80 
+56.5s 81 /usr/local/lib/python3.12/dist-packages/transformers/utils/import_utils.py in _get_module(self, module_name)
+56.5s 82 2437     def _get_module(self, module_name: str):
+56.5s 83 2438         try:
+56.5s 84 -> 2439             return importlib.import_module("." + module_name, self.__name__)
+56.5s 85 2440         except Exception as e:
+56.5s 86 2441             raise e
+56.5s 87 
+56.5s 88 /usr/lib/python3.12/importlib/__init__.py in import_module(name, package)
+56.5s 89 88                 break
+56.5s 90 89             level += 1
+56.5s 91 ---> 90     return _bootstrap._gcd_import(name[level:], package, level)
+56.5s 92 91
+56.5s 93 92
+56.5s 94 
+56.5s 95 /usr/local/lib/python3.12/dist-packages/transformers/models/auto/modeling_auto.py in <module>
+56.5s 96 19
+56.5s 97 20 from ...utils import logging
+56.5s 98 ---> 21 from .auto_factory import (
+56.5s 99 22     _BaseAutoBackboneClass,
+56.5s 100 23     _BaseAutoModelClass,
+56.5s 101 
+56.5s 102 /usr/local/lib/python3.12/dist-packages/transformers/models/auto/auto_factory.py in <module>
+56.5s 103 41
+56.5s 104 42 if is_torch_available():
+56.5s 105 ---> 43     from ...generation import GenerationMixin
+56.5s 106 44
+56.5s 107 45
+56.5s 108 
+56.5s 109 /usr/local/lib/python3.12/dist-packages/transformers/utils/import_utils.py in __getattr__(self, name)
+56.5s 110 2205         elif name in self._class_to_module:
+56.5s 111 2206             try:
+56.5s 112 -> 2207                 module = self._get_module(self._class_to_module[name])
+56.5s 113 2208                 value = getattr(module, name)
+56.5s 114 2209             except (ModuleNotFoundError, RuntimeError, AttributeError) as e:
+56.5s 115 
+56.5s 116 /usr/local/lib/python3.12/dist-packages/transformers/utils/import_utils.py in _get_module(self, module_name)
+56.5s 117 2439             return importlib.import_module("." + module_name, self.__name__)
+56.5s 118 2440         except Exception as e:
+56.5s 119 -> 2441             raise e
+56.5s 120 2442
+56.5s 121 2443     def __reduce__(self):
+56.5s 122 
+56.5s 123 /usr/local/lib/python3.12/dist-packages/transformers/utils/import_utils.py in _get_module(self, module_name)
+56.5s 124 2437     def _get_module(self, module_name: str):
+56.5s 125 2438         try:
+56.5s 126 -> 2439             return importlib.import_module("." + module_name, self.__name__)
+56.5s 127 2440         except Exception as e:
+56.5s 128 2441             raise e
+56.5s 129 
+56.5s 130 /usr/lib/python3.12/importlib/__init__.py in import_module(name, package)
+56.5s 131 88                 break
+56.5s 132 89             level += 1
+56.5s 133 ---> 90     return _bootstrap._gcd_import(name[level:], package, level)
+56.5s 134 91
+56.5s 135 92
+56.5s 136 
+56.5s 137 /usr/local/lib/python3.12/dist-packages/transformers/generation/utils.py in <module>
+56.5s 138 51 )
+56.5s 139 52 from ..utils.generic import is_flash_attention_requested
+56.5s 140 ---> 53 from .candidate_generator import (
+56.5s 141 54     AssistantVocabTranslatorCache,
+56.5s 142 55     AssistedCandidateGenerator,
+56.5s 143 
+56.5s 144 /usr/local/lib/python3.12/dist-packages/transformers/generation/candidate_generator.py in <module>
+56.5s 145 26
+56.5s 146 27 if is_sklearn_available():
+56.5s 147 ---> 28     from sklearn.metrics import roc_curve
+56.5s 148 29
+56.5s 149 30 from .logits_process import LogitsProcessorList, MinLengthLogitsProcessor, SuppressTokensLogitsProcessor
+56.5s 150 
+56.5s 151 /usr/local/lib/python3.12/dist-packages/sklearn/__init__.py in <module>
+56.5s 152 68 # it and importing it first would fail if the OpenMP dll cannot be found.
+56.5s 153 69 from sklearn import __check_build, _distributor_init  # noqa: E402 F401
+56.5s 154 ---> 70 from sklearn.base import clone  # noqa: E402
+56.5s 155 71 from sklearn.utils._show_versions import show_versions  # noqa: E402
+56.5s 156 72
+56.5s 157 
+56.5s 158 /usr/local/lib/python3.12/dist-packages/sklearn/base.py in <module>
+56.5s 159 17 from sklearn._config import config_context, get_config
+56.5s 160 18 from sklearn.exceptions import InconsistentVersionWarning
+56.5s 161 ---> 19 from sklearn.utils._metadata_requests import _MetadataRequester, _routing_enabled
+56.5s 162 20 from sklearn.utils._missing import is_pandas_na, is_scalar_nan
+56.5s 163 21 from sklearn.utils._param_validation import validate_parameter_constraints
+56.5s 164 
+56.5s 165 /usr/local/lib/python3.12/dist-packages/sklearn/utils/__init__.py in <module>
+56.5s 166 7 from sklearn.utils import metadata_routing
+56.5s 167 8 from sklearn.utils._bunch import Bunch
+56.5s 168 ----> 9 from sklearn.utils._chunking import gen_batches, gen_even_slices
+56.5s 169 10
+56.5s 170 11 # Make _safe_indexing importable from here for backward compat as this particular
+56.5s 171 
+56.5s 172 /usr/local/lib/python3.12/dist-packages/sklearn/utils/_chunking.py in <module>
+56.5s 173 9
+56.5s 174 10 from sklearn._config import get_config
+56.5s 175 ---> 11 from sklearn.utils._param_validation import Interval, validate_params
+56.5s 176 12
+56.5s 177 13
+56.5s 178 
+56.5s 179 /usr/local/lib/python3.12/dist-packages/sklearn/utils/_param_validation.py in <module>
+56.5s 180 12
+56.5s 181 13 import numpy as np
+56.5s 182 ---> 14 from scipy.sparse import csr_matrix, issparse
+56.5s 183 15
+56.5s 184 16 from sklearn._config import config_context, get_config
+56.5s 185 
+56.5s 186 /usr/local/lib/python3.12/dist-packages/scipy/sparse/__init__.py in <module>
+56.5s 187 302 import importlib as _importlib
+56.5s 188 303
+56.5s 189 --> 304 from ._base import *
+56.5s 190 305 from ._csr import *
+56.5s 191 306 from ._csc import *
+56.5s 192 
+56.5s 193 /usr/local/lib/python3.12/dist-packages/scipy/sparse/_base.py in <module>
+56.5s 194 6 import operator
+56.5s 195 7
+56.5s 196 ----> 8 from ._sputils import (asmatrix, check_reshape_kwargs, check_shape,
+56.5s 197 9                        get_sum_dtype, isdense, isscalarlike, _todata,
+56.5s 198 10                        matrix, validateaxis, getdtype, is_pydata_spmatrix)
+56.5s 199 
+56.5s 200 /usr/local/lib/python3.12/dist-packages/scipy/sparse/_sputils.py in <module>
+56.5s 201 8 from math import prod
+56.5s 202 9 import scipy.sparse as sp
+56.5s 203 ---> 10 from scipy._lib._util import np_long, np_ulong
+56.5s 204 11
+56.5s 205 12
+56.5s 206 
+56.5s 207 /usr/local/lib/python3.12/dist-packages/scipy/_lib/_util.py in <module>
+56.5s 208 12
+56.5s 209 13 import numpy as np
+56.5s 210 ---> 14 from scipy._lib._array_api import (Array, array_namespace, is_lazy_array,
+56.5s 211 15                                    is_numpy, is_marray, xp_result_device,
+56.5s 212 16                                    xp_size, xp_result_type)
+56.5s 213 
+56.5s 214 /usr/local/lib/python3.12/dist-packages/scipy/_lib/_array_api.py in <module>
+56.5s 215 23
+56.5s 216 24 from scipy._lib import array_api_compat
+56.5s 217 ---> 25 from scipy._lib.array_api_compat import (
+56.5s 218 26     is_array_api_obj,
+56.5s 219 27     is_lazy_array,
+56.5s 220 
+56.5s 221 /usr/local/lib/python3.12/dist-packages/scipy/_lib/array_api_compat/numpy/__init__.py in <module>
+56.5s 222 2 from typing import Final
+56.5s 223 3
+56.5s 224 ----> 4 from numpy import *  # noqa: F403  # pyright: ignore[reportWildcardImportFromLibrary]
+56.5s 225 5
+56.5s 226 6 # from numpy import * doesn't overwrite these builtin names
+56.5s 227 
+56.5s 228 /usr/local/lib/python3.12/dist-packages/numpy/__init__.py in __getattr__(attr)
+56.5s 229 365         promote_types,
+56.5s 230 366         ptp,
+56.5s 231 --> 367         put,
+56.5s 232 368         putmask,
+56.5s 233 369         rad2deg,
+56.5s 234 
+56.5s 235 /usr/local/lib/python3.12/dist-packages/numpy/char/__init__.py in <module>
+56.5s 236 ----> 1 from numpy._core.defchararray import *
+56.5s 237 2 from numpy._core.defchararray import __all__, __doc__
+56.5s 238 
+56.5s 239 /usr/local/lib/python3.12/dist-packages/numpy/_core/defchararray.py in <module>
+56.5s 240 21 from numpy._core import overrides
+56.5s 241 22 from numpy._core.multiarray import compare_chararrays
+56.5s 242 ---> 23 from numpy._core.strings import (
+56.5s 243 24     _join as join,
+56.5s 244 25     _rsplit as rsplit,
+56.5s 245 
+56.5s 246 /usr/local/lib/python3.12/dist-packages/numpy/_core/strings.py in <module>
+56.5s 247 20 from numpy._core.multiarray import _vec_string
+56.5s 248 21 from numpy._core.overrides import array_function_dispatch, set_module
+56.5s 249 ---> 22 from numpy._core.umath import (
+56.5s 250 23     _center,
+56.5s 251 24     _expandtabs,
+56.5s 252 
+56.5s 253 ImportError: cannot import name '_center' from 'numpy._core.umath' (/usr/local/lib/python3.12/dist-packages/numpy/_core/umath.py)
+56.5s 254 
+58.7s 255 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+58.7s 256 cells[i][c] = re.sub('\\\\\|', '|', cell)
+58.8s 257 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+58.8s 258 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+59.5s 259 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+59.5s 260 [NbConvertApp] ERROR | Notebook JSON is invalid: Additional properties are not allowed ('execution_count', 'outputs' were unexpected)
+59.5s 261 
+59.5s 262 Failed validating 'additionalProperties' in markdown_cell:
+59.5s 263 
+59.5s 264 On instance['cells'][1]:
+59.5s 265 {'cell_type': 'markdown',
+59.5s 266 'execution_count': None,
+59.5s 267 'id': '72d36e5e',
+59.5s 268 'metadata': {'papermill': {'duration': 0.004864,
+59.5s 269 'end_time': '2026-04-18T20:15:18.932074+00:00',
+59.5s 270 'exception': False,
+59.5s 271 'start_time': '2026-04-18T20:15:18.927210+00:00',
+59.5s 272 'status': 'completed'},
+59.5s 273 'tags': []},
+59.5s 274 'outputs': ['...0 outputs...'],
+59.5s 275 'source': '# GodelAI-Lite: Memory & Identity Continuity for Gemma 4\n'
+59.5s 276 '### Gem...'}
+59.8s 277 [NbConvertApp] Writing 75565 bytes to __notebook__.ipynb
+62.3s 278 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+62.4s 279 [NbConvertApp] ERROR | Notebook JSON is invalid: Additional properties are not allowed ('execution_count', 'outputs' were unexpected)
+62.4s 280 
+62.4s 281 Failed validating 'additionalProperties' in markdown_cell:
+62.4s 282 
+62.4s 283 On instance['cells'][0]:
+62.4s 284 {'cell_type': 'markdown',
+62.4s 285 'execution_count': None,
+62.4s 286 'id': '72d36e5e',
+62.4s 287 'metadata': {'papermill': {'duration': 0.004864,
+62.4s 288 'end_time': '2026-04-18T20:15:18.932074+00:00',
+62.4s 289 'exception': False,
+62.4s 290 'start_time': '2026-04-18T20:15:18.927210+00:00',
+62.4s 291 'status': 'completed'},
+62.4s 292 'tags': []},
+62.4s 293 'outputs': ['...0 outputs...'],
+62.4s 294 'source': '# GodelAI-Lite: Memory & Identity Continuity for Gemma 4\n'
+62.4s 295 '### Gem...'}
+63.3s 296 [NbConvertApp] Writing 444381 bytes to __results__.html

@@ -1,0 +1,87 @@
+6.8s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.8s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.8s 3 0.00s - to python to disable frozen modules.
+6.8s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+7.4s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.4s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.4s 7 0.00s - to python to disable frozen modules.
+7.4s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+11.7s 9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 66.8 MB/s eta 0:00:00
+11.8s 10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.7/383.7 kB 23.7 MB/s eta 0:00:00
+11.8s 11 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 645.5/645.5 kB 36.0 MB/s eta 0:00:00
+11.9s 12 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 87.8 MB/s eta 0:00:00
+11.9s 13 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 66.8 MB/s eta 0:00:00
+11.9s 14 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.7/383.7 kB 23.7 MB/s eta 0:00:00
+11.9s 15 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 645.5/645.5 kB 36.0 MB/s eta 0:00:00
+11.9s 16 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 87.8 MB/s eta 0:00:00
+32.6s 17 Setup complete. transformers==5.5.4
+45.0s 18 PyTorch : 2.10.0+cu128
+45.0s 19 CUDA    : True
+45.1s 20 Accelerator : GPU -- Tesla P100-PCIE-16GB
+45.1s 21 VRAM        : 17.1 GB
+45.1s 22 dtype       : float16
+45.1s 23 
+45.1s 24 Final device: cuda | dtype: torch.float16
+45.2s 25 Kaggle model path not found -- using HuggingFace download
+45.2s 26 Loading google/gemma-4-E4B-it...
+45.4s 27 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+45.4s 28 
+45.4s 29 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+50.7s 30 `torch_dtype` is deprecated! Use `dtype` instead!
+50.7s 31 
+50.7s 32 `torch_dtype` is deprecated! Use `dtype` instead!
+595.2s 33 Kernel died while waiting for execute reply.
+596.2s 34 Traceback (most recent call last):
+596.2s 35 File "/usr/local/lib/python3.12/dist-packages/nbclient/client.py", line 949, in async_execute_cell
+596.2s 36 exec_reply = await self.task_poll_for_reply
+596.2s 37 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+596.2s 38 File "/usr/local/lib/python3.12/dist-packages/nbclient/client.py", line 730, in _async_poll_for_reply
+596.2s 39 msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
+596.2s 40 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+596.2s 41 File "/usr/local/lib/python3.12/dist-packages/nbclient/util.py", line 96, in ensure_async
+596.2s 42 result = await obj
+596.2s 43 ^^^^^^^^^
+596.2s 44 File "/usr/local/lib/python3.12/dist-packages/jupyter_client/channels.py", line 224, in get_msg
+596.2s 45 ready = await self.socket.poll(timeout)
+596.2s 46 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+596.2s 47 asyncio.exceptions.CancelledError
+596.2s 48 
+596.2s 49 During handling of the above exception, another exception occurred:
+596.2s 50 
+596.2s 51 Traceback (most recent call last):
+596.2s 52 File "<string>", line 1, in <module>
+596.2s 53 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 116, in execute_notebook
+596.2s 54 nb = papermill_engines.execute_notebook_with_engine(
+596.2s 55 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+596.2s 56 File "/usr/local/lib/python3.12/dist-packages/papermill/engines.py", line 49, in execute_notebook_with_engine
+596.2s 57 return self.get_engine(engine_name).execute_notebook(nb, kernel_name, **kwargs)
+596.2s 58 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+596.2s 59 File "/usr/local/lib/python3.12/dist-packages/papermill/engines.py", line 371, in execute_notebook
+596.2s 60 cls.execute_managed_notebook(nb_man, kernel_name, log_output=log_output, **kwargs)
+596.2s 61 File "/usr/local/lib/python3.12/dist-packages/papermill/engines.py", line 443, in execute_managed_notebook
+596.2s 62 return PapermillNotebookClient(nb_man, **final_kwargs).execute()
+596.2s 63 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+596.2s 64 File "/usr/local/lib/python3.12/dist-packages/papermill/clientwrap.py", line 45, in execute
+596.2s 65 self.papermill_execute_cells()
+596.2s 66 File "/usr/local/lib/python3.12/dist-packages/papermill/clientwrap.py", line 72, in papermill_execute_cells
+596.2s 67 self.execute_cell(cell, index)
+596.2s 68 File "/usr/local/lib/python3.12/dist-packages/nbclient/util.py", line 84, in wrapped
+596.2s 69 return just_run(coro(*args, **kwargs))
+596.2s 70 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+596.2s 71 File "/usr/local/lib/python3.12/dist-packages/nbclient/util.py", line 62, in just_run
+596.2s 72 return loop.run_until_complete(coro)
+596.2s 73 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+596.2s 74 File "/usr/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+596.2s 75 return future.result()
+596.2s 76 ^^^^^^^^^^^^^^^
+596.2s 77 File "/usr/local/lib/python3.12/dist-packages/nbclient/client.py", line 953, in async_execute_cell
+596.2s 78 raise DeadKernelError("Kernel died")
+596.2s 79 nbclient.exceptions.DeadKernelError: Kernel died
+599.2s 80 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+599.2s 81 cells[i][c] = re.sub('\\\\\|', '|', cell)
+599.5s 82 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+599.5s 83 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+600.8s 84 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+601.2s 85 [NbConvertApp] Writing 46334 bytes to __notebook__.ipynb
+603.8s 86 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+604.3s 87 [NbConvertApp] Writing 412342 bytes to __results__.html

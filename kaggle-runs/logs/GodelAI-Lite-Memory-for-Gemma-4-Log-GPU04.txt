@@ -1,0 +1,108 @@
+7.7s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.7s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.7s 3 0.00s - to python to disable frozen modules.
+7.7s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.4s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.4s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.4s 7 0.00s - to python to disable frozen modules.
+8.4s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+13.6s 9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 65.7 MB/s eta 0:00:00
+13.6s 10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.7/383.7 kB 21.8 MB/s eta 0:00:00
+13.6s 11 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 645.5/645.5 kB 28.4 MB/s eta 0:00:00
+13.7s 12 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 93.2 MB/s eta 0:00:00
+13.8s 13 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 65.7 MB/s eta 0:00:00
+13.8s 14 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.7/383.7 kB 21.8 MB/s eta 0:00:00
+13.8s 15 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 645.5/645.5 kB 28.4 MB/s eta 0:00:00
+13.8s 16 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 93.2 MB/s eta 0:00:00
+38.2s 17 Setup complete. transformers==5.5.4
+52.6s 18 PyTorch : 2.10.0+cu128
+52.6s 19 CUDA    : True
+52.6s 20 Accelerator : GPU -- Tesla P100-PCIE-16GB
+52.6s 21 VRAM        : 17.1 GB
+52.6s 22 dtype       : float16
+52.6s 23 
+52.6s 24 Final device: cuda | dtype: torch.float16
+52.8s 25 Kaggle model path not found -- using HuggingFace download
+52.8s 26 Loading google/gemma-4-E4B-it...
+53.0s 27 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+53.0s 28 
+53.0s 29 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+162.5s 30 [1mGemma4ForConditionalGeneration LOAD REPORT[0m from: google/gemma-4-E4B-it
+162.5s 31 Key                                                           | Status     |
+162.5s 32 --------------------------------------------------------------+------------+-
+162.5s 33 model.language_model.layers.{24...41}.self_attn.v_proj.weight | UNEXPECTED |
+162.5s 34 model.language_model.layers.{24...41}.self_attn.k_proj.weight | UNEXPECTED |
+162.5s 35 model.language_model.layers.{24...41}.self_attn.k_norm.weight | UNEXPECTED |
+162.5s 36 lm_head.weight                                                | MISSING    |
+162.5s 37 
+162.5s 38 Notes:
+162.5s 39 - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+162.5s 40 - MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+162.5s 41 
+162.5s 42 [1mGemma4ForConditionalGeneration LOAD REPORT[0m from: google/gemma-4-E4B-it
+162.5s 43 Key                                                           | Status     |
+162.5s 44 --------------------------------------------------------------+------------+-
+162.5s 45 model.language_model.layers.{24...41}.self_attn.v_proj.weight | UNEXPECTED |
+162.5s 46 model.language_model.layers.{24...41}.self_attn.k_proj.weight | UNEXPECTED |
+162.5s 47 model.language_model.layers.{24...41}.self_attn.k_norm.weight | UNEXPECTED |
+162.5s 48 lm_head.weight                                                | MISSING    |
+162.5s 49 
+162.5s 50 Notes:
+162.5s 51 - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+162.5s 52 - MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+162.7s 53 Failed: AcceleratorError: CUDA error: no kernel image is available for execution on the device
+162.7s 54 Search for `cudaErrorNoKernelImageForDevice' in htt
+162.7s 55 Loading google/gemma-4-E2B-it...
+221.5s 56 [1mGemma4ForConditionalGeneration LOAD REPORT[0m from: google/gemma-4-E2B-it
+221.5s 57 Key                                                           | Status     |
+221.5s 58 --------------------------------------------------------------+------------+-
+221.5s 59 model.language_model.layers.{15...34}.self_attn.k_proj.weight | UNEXPECTED |
+221.5s 60 model.language_model.layers.{15...34}.self_attn.v_proj.weight | UNEXPECTED |
+221.5s 61 model.language_model.layers.{15...34}.self_attn.k_norm.weight | UNEXPECTED |
+221.5s 62 lm_head.weight                                                | MISSING    |
+221.5s 63 
+221.5s 64 Notes:
+221.5s 65 - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+221.5s 66 - MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+221.5s 67 
+221.5s 68 [1mGemma4ForConditionalGeneration LOAD REPORT[0m from: google/gemma-4-E2B-it
+221.5s 69 Key                                                           | Status     |
+221.5s 70 --------------------------------------------------------------+------------+-
+221.5s 71 model.language_model.layers.{15...34}.self_attn.k_proj.weight | UNEXPECTED |
+221.5s 72 model.language_model.layers.{15...34}.self_attn.v_proj.weight | UNEXPECTED |
+221.5s 73 model.language_model.layers.{15...34}.self_attn.k_norm.weight | UNEXPECTED |
+221.5s 74 lm_head.weight                                                | MISSING    |
+221.5s 75 
+221.5s 76 Notes:
+221.5s 77 - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+221.5s 78 - MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+221.7s 79 Failed: AcceleratorError: CUDA error: no kernel image is available for execution on the device
+221.7s 80 Search for `cudaErrorNoKernelImageForDevice' in htt
+225.2s 81 Traceback (most recent call last):
+225.2s 82 File "<string>", line 1, in <module>
+225.2s 83 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 131, in execute_notebook
+225.2s 84 raise_for_execution_errors(nb, output_path)
+225.2s 85 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 251, in raise_for_execution_errors
+225.2s 86 raise error
+225.2s 87 papermill.exceptions.PapermillExecutionError:
+225.2s 88 ---------------------------------------------------------------------------
+225.2s 89 Exception encountered at "In [8]":
+225.2s 90 ---------------------------------------------------------------------------
+225.2s 91 RuntimeError                              Traceback (most recent call last)
+225.2s 92 /tmp/ipykernel_23/155276356.py in <cell line: 0>()
+225.2s 93 50
+225.2s 94 51 if model is None:
+225.2s 95 ---> 52     raise RuntimeError('All model candidates failed. Ensure internet is ON.')
+225.2s 96 53
+225.2s 97 54 print(f'Model      : {MODEL_NAME}')
+225.2s 98 
+225.2s 99 RuntimeError: All model candidates failed. Ensure internet is ON.
+225.2s 100 
+228.2s 101 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+228.2s 102 cells[i][c] = re.sub('\\\\\|', '|', cell)
+228.4s 103 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+228.4s 104 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+229.3s 105 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+229.8s 106 [NbConvertApp] Writing 187815 bytes to __notebook__.ipynb
+232.9s 107 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+234.0s 108 [NbConvertApp] Writing 527093 bytes to __results__.html

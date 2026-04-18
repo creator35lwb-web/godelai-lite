@@ -1,0 +1,89 @@
+11.7s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+11.7s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+11.7s 3 0.00s - to python to disable frozen modules.
+11.7s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+12.6s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+12.6s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+12.6s 7 0.00s - to python to disable frozen modules.
+12.6s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+49.8s 9 [33mWARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7a4baf00af90>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/bitsandbytes/[0m[33m
+82.4s 10 [0m[33mWARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7a4baea95b50>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/bitsandbytes/[0m[33m
+115.3s 11 [0m[33mWARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7a4baea94aa0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/bitsandbytes/[0m[33m
+149.3s 12 [0m[33mWARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7a4baeac7f80>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/bitsandbytes/[0m[33m
+185.4s 13 [0m[33mWARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7a4baeac4e60>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/bitsandbytes/[0m[33m
+217.4s 14 [0m[31mERROR: Could not find a version that satisfies the requirement bitsandbytes (from versions: none)[0m[31m
+217.4s 15 [0m[31mERROR: No matching distribution found for bitsandbytes[0m[31m
+253.2s 16 [0mPyTorch: 2.10.0+cpu
+253.2s 17 CUDA: False
+285.6s 18 No HF_TOKEN secret found — gated models will fail. Add it via Notebook -> Add-ons -> Secrets
+285.6s 19 CUDA available: False
+285.6s 20 Trying google/gemma-4-e4b-it...
+349.5s 21 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-4-e4b-it/resolve/main/config.json
+349.5s 22 
+349.5s 23 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-4-e4b-it/resolve/main/config.json
+349.5s 24 Retrying in 1s [Retry 1/5].
+349.5s 25 
+349.5s 26 Retrying in 1s [Retry 1/5].
+414.6s 27 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-4-e4b-it/resolve/main/config.json
+414.6s 28 
+414.6s 29 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-4-e4b-it/resolve/main/config.json
+414.6s 30 Retrying in 1s [Retry 1/5].
+414.6s 31 
+414.6s 32 Retrying in 1s [Retry 1/5].
+415.8s 33 Failed: Can't load the configuration of 'google/gemma-4-e4b-it'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'google/gemma-4-e4b-it' is the correct path to a directory containing a config.json file
+415.8s 34 Trying google/gemma-2-2b-it...
+479.6s 35 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2-2b-it/resolve/main/config.json
+479.6s 36 
+479.6s 37 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2-2b-it/resolve/main/config.json
+479.6s 38 Retrying in 1s [Retry 1/5].
+479.6s 39 
+479.6s 40 Retrying in 1s [Retry 1/5].
+544.7s 41 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2-2b-it/resolve/main/config.json
+544.7s 42 
+544.7s 43 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2-2b-it/resolve/main/config.json
+544.7s 44 Retrying in 1s [Retry 1/5].
+544.7s 45 
+544.7s 46 Retrying in 1s [Retry 1/5].
+545.9s 47 Failed: Can't load the configuration of 'google/gemma-2-2b-it'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'google/gemma-2-2b-it' is the correct path to a directory containing a config.json file
+545.9s 48 Trying google/gemma-2b-it...
+609.8s 49 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2b-it/resolve/main/config.json
+609.8s 50 
+609.8s 51 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2b-it/resolve/main/config.json
+609.8s 52 Retrying in 1s [Retry 1/5].
+609.8s 53 
+609.8s 54 Retrying in 1s [Retry 1/5].
+674.9s 55 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2b-it/resolve/main/config.json
+674.9s 56 
+674.9s 57 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2b-it/resolve/main/config.json
+674.9s 58 Retrying in 1s [Retry 1/5].
+674.9s 59 
+674.9s 60 Retrying in 1s [Retry 1/5].
+675.9s 61 Failed: Can't load the configuration of 'google/gemma-2b-it'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'google/gemma-2b-it' is the correct path to a directory containing a config.json file
+678.4s 62 Traceback (most recent call last):
+678.4s 63 File "<string>", line 1, in <module>
+678.4s 64 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 131, in execute_notebook
+678.4s 65 raise_for_execution_errors(nb, output_path)
+678.4s 66 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 251, in raise_for_execution_errors
+678.4s 67 raise error
+678.4s 68 papermill.exceptions.PapermillExecutionError:
+678.4s 69 ---------------------------------------------------------------------------
+678.4s 70 Exception encountered at "In [7]":
+678.4s 71 ---------------------------------------------------------------------------
+678.4s 72 RuntimeError                              Traceback (most recent call last)
+678.4s 73 /tmp/ipykernel_16/1035281315.py in <cell line: 0>()
+678.4s 74 61
+678.4s 75 62 if model is None:
+678.4s 76 ---> 63     raise RuntimeError('All model candidates failed. Check HF_TOKEN and license acceptance.')
+678.4s 77 64
+678.4s 78 65 print(f'Loaded: {MODEL_NAME} in {time.time()-t0:.1f}s')
+678.4s 79 
+678.4s 80 RuntimeError: All model candidates failed. Check HF_TOKEN and license acceptance.
+678.4s 81 
+681.5s 82 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+681.5s 83 cells[i][c] = re.sub('\\\\\|', '|', cell)
+681.7s 84 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+681.7s 85 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+682.6s 86 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+683.0s 87 [NbConvertApp] Writing 48352 bytes to __notebook__.ipynb
+686.0s 88 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+687.2s 89 [NbConvertApp] Writing 411570 bytes to __results__.html

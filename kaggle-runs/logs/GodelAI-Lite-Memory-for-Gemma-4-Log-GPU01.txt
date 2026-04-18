@@ -1,0 +1,62 @@
+7.4s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.4s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.4s 3 0.00s - to python to disable frozen modules.
+7.4s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.1s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.1s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.1s 7 0.00s - to python to disable frozen modules.
+8.1s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+14.3s 9 Setup complete.
+38.2s 10 PyTorch : 2.10.0+cu128
+38.2s 11 CUDA    : True
+38.2s 12 Accelerator : GPU -- Tesla P100-PCIE-16GB
+38.2s 13 VRAM        : 17.1 GB
+38.2s 14 dtype       : float16
+38.2s 15 
+38.2s 16 Final device: cuda | dtype: torch.float16
+38.4s 17 Kaggle model path not found -- falling back to HuggingFace download
+38.4s 18 Loading google/gemma-4-E4B-it...
+38.6s 19 You are using a model of type gemma4 to instantiate a model of type . This is not supported for all configurations of models and can yield errors.
+38.6s 20 
+38.6s 21 You are using a model of type gemma4 to instantiate a model of type . This is not supported for all configurations of models and can yield errors.
+38.7s 22 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+38.7s 23 
+38.7s 24 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+44.9s 25 Failed: ValueError: The checkpoint you are trying to load has model type `gemma4` but Transformers does not recognize this architecture. Thi
+44.9s 26 Loading google/gemma-4-E2B-it...
+45.0s 27 You are using a model of type gemma4 to instantiate a model of type . This is not supported for all configurations of models and can yield errors.
+45.0s 28 
+45.0s 29 You are using a model of type gemma4 to instantiate a model of type . This is not supported for all configurations of models and can yield errors.
+50.6s 30 Failed: ValueError: The checkpoint you are trying to load has model type `gemma4` but Transformers does not recognize this architecture. Thi
+50.6s 31 Loading google/gemma-2-2b-it...
+50.6s 32 Failed: OSError: You are trying to access a gated repo.
+50.6s 33 Make sure to have access to it at https://huggingface.co/google/gemma-2-2b-it.
+50.6s 34 40
+53.7s 35 Traceback (most recent call last):
+53.7s 36 File "<string>", line 1, in <module>
+53.7s 37 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 131, in execute_notebook
+53.7s 38 raise_for_execution_errors(nb, output_path)
+53.7s 39 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 251, in raise_for_execution_errors
+53.7s 40 raise error
+53.7s 41 papermill.exceptions.PapermillExecutionError:
+53.7s 42 ---------------------------------------------------------------------------
+53.7s 43 Exception encountered at "In [8]":
+53.7s 44 ---------------------------------------------------------------------------
+53.7s 45 RuntimeError                              Traceback (most recent call last)
+53.7s 46 /tmp/ipykernel_23/1427136025.py in <cell line: 0>()
+53.7s 47 57
+53.7s 48 58 if model is None:
+53.7s 49 ---> 59     raise RuntimeError('All model candidates failed. Check model source is added and internet is ON.')
+53.7s 50 60
+53.7s 51 61 print(f'Model        : {MODEL_NAME}')
+53.7s 52 
+53.7s 53 RuntimeError: All model candidates failed. Check model source is added and internet is ON.
+53.7s 54 
+56.1s 55 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+56.1s 56 cells[i][c] = re.sub('\\\\\|', '|', cell)
+56.3s 57 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+56.3s 58 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+57.2s 59 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+57.6s 60 [NbConvertApp] Writing 140163 bytes to __notebook__.ipynb
+60.6s 61 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+61.7s 62 [NbConvertApp] Writing 489825 bytes to __results__.html

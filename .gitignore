@@ -48,3 +48,6 @@ kaggle.json
 # Agent System
 .qwen/
 build_notebook.py
+
+# Claude Code session data
+.claude/

@@ -1,0 +1,264 @@
+8.1s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.1s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.1s 3 0.00s - to python to disable frozen modules.
+8.1s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.9s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.9s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.9s 7 0.00s - to python to disable frozen modules.
+8.9s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+39.5s 9 PyTorch: 2.10.0+cpu
+39.5s 10 CUDA: False
+39.7s 11 Loading google/gemma-2b (shared weights — fair comparison)...
+103.6s 12 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2b/resolve/main/config.json
+103.6s 13 
+103.6s 14 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2b/resolve/main/config.json
+103.6s 15 Retrying in 1s [Retry 1/5].
+103.6s 16 
+103.6s 17 Retrying in 1s [Retry 1/5].
+168.7s 18 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2b/resolve/main/config.json
+168.7s 19 
+168.7s 20 '[Errno -3] Temporary failure in name resolution' thrown while requesting HEAD https://huggingface.co/google/gemma-2b/resolve/main/config.json
+168.7s 21 Retrying in 1s [Retry 1/5].
+168.7s 22 
+168.7s 23 Retrying in 1s [Retry 1/5].
+171.4s 24 Traceback (most recent call last):
+171.4s 25 File "<string>", line 1, in <module>
+171.4s 26 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 131, in execute_notebook
+171.4s 27 raise_for_execution_errors(nb, output_path)
+171.4s 28 File "/usr/local/lib/python3.12/dist-packages/papermill/execute.py", line 251, in raise_for_execution_errors
+171.4s 29 raise error
+171.4s 30 papermill.exceptions.PapermillExecutionError:
+171.4s 31 ---------------------------------------------------------------------------
+171.4s 32 Exception encountered at "In [7]":
+171.4s 33 ---------------------------------------------------------------------------
+171.4s 34 RuntimeError                              Traceback (most recent call last)
+171.4s 35 /usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py in _get_config_dict(cls, pretrained_model_name_or_path, **kwargs)
+171.4s 36 623                 # Load from local folder or from cache or download from model Hub and cache
+171.4s 37 --> 624                 resolved_config_file = cached_file(
+171.4s 38 625                     pretrained_model_name_or_path,
+171.4s 39 
+171.4s 40 /usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py in cached_file(path_or_repo_id, filename, **kwargs)
+171.4s 41 275     """
+171.4s 42 --> 276     file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+171.4s 43 277     file = file[0] if file is not None else file
+171.4s 44 
+171.4s 45 /usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py in cached_files(path_or_repo_id, filenames, cache_dir, force_download, proxies, token, revision, local_files_only, subfolder, repo_type, user_agent, _raise_exceptions_for_gated_repo, _raise_exceptions_for_missing_entries, _raise_exceptions_for_connection_errors, _commit_hash, **deprecated_kwargs)
+171.4s 46 506         elif not isinstance(e, EntryNotFoundError):
+171.4s 47 --> 507             raise e
+171.4s 48 508
+171.4s 49 
+171.4s 50 /usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py in cached_files(path_or_repo_id, filenames, cache_dir, force_download, proxies, token, revision, local_files_only, subfolder, repo_type, user_agent, _raise_exceptions_for_gated_repo, _raise_exceptions_for_missing_entries, _raise_exceptions_for_connection_errors, _commit_hash, **deprecated_kwargs)
+171.4s 51 418             # This is slightly better for only 1 file
+171.4s 52 --> 419             hf_hub_download(
+171.4s 53 420                 path_or_repo_id,
+171.4s 54 
+171.4s 55 /usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py in _inner_fn(*args, **kwargs)
+171.4s 56 88
+171.4s 57 ---> 89         return fn(*args, **kwargs)
+171.4s 58 90
+171.4s 59 
+171.4s 60 /usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py in hf_hub_download(repo_id, filename, subfolder, repo_type, revision, library_name, library_version, cache_dir, local_dir, user_agent, force_download, etag_timeout, token, local_files_only, headers, endpoint, tqdm_class, dry_run)
+171.4s 61 1031     else:
+171.4s 62 -> 1032         return _hf_hub_download_to_cache_dir(
+171.4s 63 1033             # Destination
+171.4s 64 
+171.4s 65 /usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py in _hf_hub_download_to_cache_dir(cache_dir, repo_id, filename, repo_type, revision, endpoint, etag_timeout, headers, token, local_files_only, force_download, tqdm_class, dry_run)
+171.4s 66 1164                 (url_to_download, etag, commit_hash, expected_size, xet_file_data, head_call_error) = (
+171.4s 67 -> 1165                     _get_metadata_or_catch_error(
+171.4s 68 1166                         repo_id=repo_id,
+171.4s 69 
+171.4s 70 /usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py in _get_metadata_or_catch_error(repo_id, filename, repo_type, revision, endpoint, etag_timeout, headers, token, local_files_only, relative_filename, storage_folder, retry_on_errors)
+171.4s 71 1698             try:
+171.4s 72 -> 1699                 metadata = get_hf_file_metadata(
+171.4s 73 1700                     url=url,
+171.4s 74 
+171.4s 75 /usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py in _inner_fn(*args, **kwargs)
+171.4s 76 88
+171.4s 77 ---> 89         return fn(*args, **kwargs)
+171.4s 78 90
+171.4s 79 
+171.4s 80 /usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py in get_hf_file_metadata(url, token, timeout, library_name, library_version, user_agent, headers, endpoint, retry_on_errors)
+171.4s 81 1621     # Retrieve metadata
+171.4s 82 -> 1622     response = _httpx_follow_relative_redirects(
+171.4s 83 1623         method="HEAD", url=url, headers=hf_headers, timeout=timeout, retry_on_errors=retry_on_errors
+171.4s 84 
+171.4s 85 /usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py in _httpx_follow_relative_redirects(method, url, retry_on_errors, **httpx_kwargs)
+171.4s 86 301     while True:
+171.4s 87 --> 302         response = http_backoff(
+171.4s 88 303             method=method,
+171.4s 89 
+171.4s 90 /usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py in http_backoff(method, url, max_retries, base_wait_time, max_wait_time, retry_on_exceptions, retry_on_status_codes, **kwargs)
+171.4s 91 505     """
+171.4s 92 --> 506     return next(
+171.4s 93 507         _http_backoff_base(
+171.4s 94 
+171.4s 95 /usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py in _http_backoff_base(method, url, max_retries, base_wait_time, max_wait_time, retry_on_exceptions, retry_on_status_codes, stream, **kwargs)
+171.4s 96 413             else:
+171.4s 97 --> 414                 response = client.request(method=method, url=url, **kwargs)
+171.4s 98 415                 if not _should_retry(response):
+171.4s 99 
+171.4s 100 /usr/local/lib/python3.12/dist-packages/httpx/_client.py in request(self, method, url, content, data, files, json, params, headers, cookies, auth, follow_redirects, timeout, extensions)
+171.4s 101 824         )
+171.4s 102 --> 825         return self.send(request, auth=auth, follow_redirects=follow_redirects)
+171.4s 103 826
+171.4s 104 
+171.4s 105 /usr/local/lib/python3.12/dist-packages/httpx/_client.py in send(self, request, stream, auth, follow_redirects)
+171.4s 106 900         if self._state == ClientState.CLOSED:
+171.4s 107 --> 901             raise RuntimeError("Cannot send a request, as the client has been closed.")
+171.4s 108 902
+171.4s 109 
+171.4s 110 RuntimeError: Cannot send a request, as the client has been closed.
+171.4s 111 
+171.4s 112 During handling of the above exception, another exception occurred:
+171.4s 113 
+171.4s 114 OSError                                   Traceback (most recent call last)
+171.4s 115 /usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py in from_pretrained(cls, pretrained_model_name_or_path, *inputs, **kwargs)
+171.4s 116 616             try:
+171.4s 117 --> 617                 config = AutoConfig.from_pretrained(
+171.4s 118 618                     pretrained_model_name_or_path, trust_remote_code=trust_remote_code, **kwargs
+171.4s 119 
+171.4s 120 /usr/local/lib/python3.12/dist-packages/transformers/models/auto/configuration_auto.py in from_pretrained(cls, pretrained_model_name_or_path, **kwargs)
+171.4s 121 1355
+171.4s 122 -> 1356         config_dict, unused_kwargs = PreTrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+171.4s 123 1357         has_remote_code = "auto_map" in config_dict and "AutoConfig" in config_dict["auto_map"]
+171.4s 124 
+171.4s 125 /usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py in get_config_dict(cls, pretrained_model_name_or_path, **kwargs)
+171.4s 126 568         # Get config dict associated with the base config file
+171.4s 127 --> 569         config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+171.4s 128 570         if config_dict is None:
+171.4s 129 
+171.4s 130 /usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py in _get_config_dict(cls, pretrained_model_name_or_path, **kwargs)
+171.4s 131 645                 # For any other exception, we throw a generic error.
+171.4s 132 --> 646                 raise OSError(
+171.4s 133 647                     f"Can't load the configuration of '{pretrained_model_name_or_path}'. If you were trying to load it"
+171.4s 134 
+171.4s 135 OSError: Can't load the configuration of 'google/gemma-2b'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'google/gemma-2b' is the correct path to a directory containing a config.json file
+171.4s 136 
+171.4s 137 During handling of the above exception, another exception occurred:
+171.4s 138 
+171.4s 139 RuntimeError                              Traceback (most recent call last)
+171.4s 140 /usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py in _get_config_dict(cls, pretrained_model_name_or_path, **kwargs)
+171.4s 141 623                 # Load from local folder or from cache or download from model Hub and cache
+171.4s 142 --> 624                 resolved_config_file = cached_file(
+171.4s 143 625                     pretrained_model_name_or_path,
+171.4s 144 
+171.4s 145 /usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py in cached_file(path_or_repo_id, filename, **kwargs)
+171.4s 146 275     """
+171.4s 147 --> 276     file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+171.4s 148 277     file = file[0] if file is not None else file
+171.4s 149 
+171.4s 150 /usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py in cached_files(path_or_repo_id, filenames, cache_dir, force_download, proxies, token, revision, local_files_only, subfolder, repo_type, user_agent, _raise_exceptions_for_gated_repo, _raise_exceptions_for_missing_entries, _raise_exceptions_for_connection_errors, _commit_hash, **deprecated_kwargs)
+171.4s 151 506         elif not isinstance(e, EntryNotFoundError):
+171.4s 152 --> 507             raise e
+171.4s 153 508
+171.4s 154 
+171.4s 155 /usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py in cached_files(path_or_repo_id, filenames, cache_dir, force_download, proxies, token, revision, local_files_only, subfolder, repo_type, user_agent, _raise_exceptions_for_gated_repo, _raise_exceptions_for_missing_entries, _raise_exceptions_for_connection_errors, _commit_hash, **deprecated_kwargs)
+171.4s 156 418             # This is slightly better for only 1 file
+171.4s 157 --> 419             hf_hub_download(
+171.4s 158 420                 path_or_repo_id,
+171.4s 159 
+171.4s 160 /usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py in _inner_fn(*args, **kwargs)
+171.4s 161 88
+171.4s 162 ---> 89         return fn(*args, **kwargs)
+171.4s 163 90
+171.4s 164 
+171.4s 165 /usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py in hf_hub_download(repo_id, filename, subfolder, repo_type, revision, library_name, library_version, cache_dir, local_dir, user_agent, force_download, etag_timeout, token, local_files_only, headers, endpoint, tqdm_class, dry_run)
+171.4s 166 1031     else:
+171.4s 167 -> 1032         return _hf_hub_download_to_cache_dir(
+171.4s 168 1033             # Destination
+171.4s 169 
+171.4s 170 /usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py in _hf_hub_download_to_cache_dir(cache_dir, repo_id, filename, repo_type, revision, endpoint, etag_timeout, headers, token, local_files_only, force_download, tqdm_class, dry_run)
+171.4s 171 1164                 (url_to_download, etag, commit_hash, expected_size, xet_file_data, head_call_error) = (
+171.4s 172 -> 1165                     _get_metadata_or_catch_error(
+171.4s 173 1166                         repo_id=repo_id,
+171.4s 174 
+171.4s 175 /usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py in _get_metadata_or_catch_error(repo_id, filename, repo_type, revision, endpoint, etag_timeout, headers, token, local_files_only, relative_filename, storage_folder, retry_on_errors)
+171.4s 176 1698             try:
+171.4s 177 -> 1699                 metadata = get_hf_file_metadata(
+171.4s 178 1700                     url=url,
+171.4s 179 
+171.4s 180 /usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py in _inner_fn(*args, **kwargs)
+171.4s 181 88
+171.4s 182 ---> 89         return fn(*args, **kwargs)
+171.4s 183 90
+171.4s 184 
+171.4s 185 /usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py in get_hf_file_metadata(url, token, timeout, library_name, library_version, user_agent, headers, endpoint, retry_on_errors)
+171.4s 186 1621     # Retrieve metadata
+171.4s 187 -> 1622     response = _httpx_follow_relative_redirects(
+171.4s 188 1623         method="HEAD", url=url, headers=hf_headers, timeout=timeout, retry_on_errors=retry_on_errors
+171.4s 189 
+171.4s 190 /usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py in _httpx_follow_relative_redirects(method, url, retry_on_errors, **httpx_kwargs)
+171.4s 191 301     while True:
+171.4s 192 --> 302         response = http_backoff(
+171.4s 193 303             method=method,
+171.4s 194 
+171.4s 195 /usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py in http_backoff(method, url, max_retries, base_wait_time, max_wait_time, retry_on_exceptions, retry_on_status_codes, **kwargs)
+171.4s 196 505     """
+171.4s 197 --> 506     return next(
+171.4s 198 507         _http_backoff_base(
+171.4s 199 
+171.4s 200 /usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py in _http_backoff_base(method, url, max_retries, base_wait_time, max_wait_time, retry_on_exceptions, retry_on_status_codes, stream, **kwargs)
+171.4s 201 413             else:
+171.4s 202 --> 414                 response = client.request(method=method, url=url, **kwargs)
+171.4s 203 415                 if not _should_retry(response):
+171.4s 204 
+171.4s 205 /usr/local/lib/python3.12/dist-packages/httpx/_client.py in request(self, method, url, content, data, files, json, params, headers, cookies, auth, follow_redirects, timeout, extensions)
+171.4s 206 824         )
+171.4s 207 --> 825         return self.send(request, auth=auth, follow_redirects=follow_redirects)
+171.4s 208 826
+171.4s 209 
+171.4s 210 /usr/local/lib/python3.12/dist-packages/httpx/_client.py in send(self, request, stream, auth, follow_redirects)
+171.4s 211 900         if self._state == ClientState.CLOSED:
+171.4s 212 --> 901             raise RuntimeError("Cannot send a request, as the client has been closed.")
+171.4s 213 902
+171.4s 214 
+171.4s 215 RuntimeError: Cannot send a request, as the client has been closed.
+171.4s 216 
+171.4s 217 During handling of the above exception, another exception occurred:
+171.4s 218 
+171.4s 219 OSError                                   Traceback (most recent call last)
+171.4s 220 /tmp/ipykernel_16/1440201583.py in <cell line: 0>()
+171.4s 221 3 print(f'Loading {MODEL_NAME} (shared weights — fair comparison)...')
+171.4s 222 4 t0 = time.time()
+171.4s 223 ----> 5 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+171.4s 224 6 model = AutoModelForCausalLM.from_pretrained(
+171.4s 225 7     MODEL_NAME,
+171.4s 226 
+171.4s 227 /usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py in from_pretrained(cls, pretrained_model_name_or_path, *inputs, **kwargs)
+171.4s 228 619                 )
+171.4s 229 620             except Exception:
+171.4s 230 --> 621                 config = PreTrainedConfig.from_pretrained(pretrained_model_name_or_path, **kwargs)
+171.4s 231 622
+171.4s 232 623         config_model_type = config.model_type
+171.4s 233 
+171.4s 234 /usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py in from_pretrained(cls, pretrained_model_name_or_path, cache_dir, force_download, local_files_only, token, revision, **kwargs)
+171.4s 235 529         kwargs["revision"] = revision
+171.4s 236 530
+171.4s 237 --> 531         config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+171.4s 238 532         if cls.base_config_key and cls.base_config_key in config_dict:
+171.4s 239 533             config_dict = config_dict[cls.base_config_key]
+171.4s 240 
+171.4s 241 /usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py in get_config_dict(cls, pretrained_model_name_or_path, **kwargs)
+171.4s 242 567         original_kwargs = copy.deepcopy(kwargs)
+171.4s 243 568         # Get config dict associated with the base config file
+171.4s 244 --> 569         config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+171.4s 245 570         if config_dict is None:
+171.4s 246 571             return {}, kwargs
+171.4s 247 
+171.4s 248 /usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py in _get_config_dict(cls, pretrained_model_name_or_path, **kwargs)
+171.4s 249 644             except Exception:
+171.4s 250 645                 # For any other exception, we throw a generic error.
+171.4s 251 --> 646                 raise OSError(
+171.4s 252 647                     f"Can't load the configuration of '{pretrained_model_name_or_path}'. If you were trying to load it"
+171.4s 253 648                     " from 'https://huggingface.co/models', make sure you don't have a local directory with the same"
+171.4s 254 
+171.4s 255 OSError: Can't load the configuration of 'google/gemma-2b'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'google/gemma-2b' is the correct path to a directory containing a config.json file
+171.4s 256 
+173.9s 257 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+173.9s 258 cells[i][c] = re.sub('\\\\\|', '|', cell)
+174.1s 259 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+174.1s 260 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+174.8s 261 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+175.1s 262 [NbConvertApp] Writing 75586 bytes to __notebook__.ipynb
+177.6s 263 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+178.5s 264 [NbConvertApp] Writing 433935 bytes to __results__.html
