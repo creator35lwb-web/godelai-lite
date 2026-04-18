@@ -31,62 +31,88 @@ Input → Model → Output
 
 **Our approach:**
 ```
-Input → Model → Memory → Refinement → Output
+Input → MemPalace-Lite → Augmented Prompt → Gemma 4 → GIFP-Lite Check → Output
+                ↑                                                              |
+                └──────────────── Memory Writer ◄────────────────────────────┘
 ```
 
-We introduce three lightweight modules:
+We introduce three lightweight inference-time modules, each addressing a distinct failure mode of memoryless SLMs:
 
-### 2.1 MemPalace-Lite (Memory Layer)
+### 2.1 MemPalace-Lite v2 (Episodic Memory Layer)
 
-A structured external memory that stores:
-1. Past interactions
-2. Extracted key facts
-3. Useful reasoning patterns
+A structured external memory store with **temporal decay** to prioritise recency:
+
+```
+relevance_score = cosine_similarity(query, memory_entry) × decay(timestamp)
+decay(t) = exp(-λ × Δt)   where λ = 0.1, Δt = steps since stored
+```
+
+Stores three tiers:
+1. **Episodic history** — past interaction turns (ring-buffer, capacity 50)
+2. **Key facts** — TF-IDF extracted noun phrases from high-confidence outputs
+3. **Reasoning patterns** — successful chain-of-thought templates
+
+At inference time, the top-K entries by relevance score are injected into the prompt prefix, giving Gemma 4 access to persistent cross-turn context without any weight update.
+
+### 2.2 MACP-Lite (Reasoning Continuity Layer)
+
+Multi-Agent Continuity Protocol (Lite) wraps each inference call in a structured reasoning envelope:
+
+```
+[CONTEXT: <retrieved memory>]
+[ROLE: <identity constraints>]
+[TASK: <current query>]
+[PRIOR_REASONING: <last chain-of-thought>]
+```
+
+This ensures each generation step is a **continuation**, not a fresh cold start — eliminating the re-introduction drift seen in vanilla SLM deployments.
+
+### 2.3 GIFP-Lite v2 (Identity Governance Layer)
+
+Gemma Identity Fingerprint Protocol (Lite) measures output drift using **TF-IDF cosine similarity** against a stored identity fingerprint:
 
 ```python
-{
-  "history": [...],
-  "key_facts": [...],
-  "patterns": [...]
-}
+drift_score = 1 - cosine_similarity(tfidf(output), identity_fingerprint)
+if drift_score > DRIFT_THRESHOLD:   # default 0.35
+    output = refinement_pass(output, identity_fingerprint)
 ```
 
-This allows Gemma 4 to reuse knowledge across iterations, overcoming context window limits.
-
-### 2.2 MACP-Lite (Continuity Layer)
-
-Inspired by multi-agent systems, MACP-Lite ensures:
-- Consistent context passing
-- Structured reasoning flow
-- Task continuity
-
-Each inference step becomes part of a chain of reasoning events, not an isolated call.
-
-### 2.3 GIFP-Lite (Identity Layer)
-
-To maintain consistency, we enforce a minimal identity structure:
-- Fixed role definition
-- Stable reasoning constraints
-- Controlled behavioral drift
-
-This ensures the model behaves as a coherent agent over time, not a random responder.
+If drift exceeds threshold, a second pass is triggered with the identity fingerprint explicitly prepended. This enforces coherent persona without any fine-tuning.
 
 ---
 
 ## 3. System Architecture
 
+GodelAI-Lite operates as a **two-layer ecosystem**:
+
+| Layer | System | When | Mechanism |
+|---|---|---|---|
+| Training-time | GodelAI (full) | Fine-tuning | EWC / Fisher Information Matrix — prevents catastrophic forgetting |
+| Inference-time | GodelAI-Lite | Every call | MemPalace + MACP + GIFP — adds persistence without weight changes |
+
+GodelAI-Lite targets the inference layer specifically: it requires no retraining, no LoRA adapter, and no additional GPU memory for weights. The full GodelAI framework (training-time) closes the other half of the memory gap via continual learning.
+
+**Inference-time execution flow:**
+
 ```
-Gemma 4 (SLM)
-      ↓
-Context Loader (MemPalace-Lite)
-      ↓
-Inference Engine
-      ↓
-Memory Writer
-      ↓
-Identity Check (GIFP-Lite)
-      ↓
-Refinement Loop
+Query
+  │
+  ▼
+MemPalace-Lite v2 ──── retrieve top-K by (cosine × decay) ────►┐
+                                                                  │
+                                                           Augmented Prompt
+                                                                  │
+                                                                  ▼
+                                                           Gemma 4 (SLM)
+                                                                  │
+                                                                  ▼
+                                                        GIFP-Lite v2 drift check
+                                                         ├─ drift OK  →  Output
+                                                         └─ drift HIGH → Refinement Pass → Output
+                                                                  │
+                                                                  ▼
+                                                        MemPalace-Lite v2 write
+                                                        (TF-IDF fact extraction + episodic store)
 ```
 
 ---
@@ -94,19 +120,31 @@ Refinement Loop
 ## 4. Methodology
 
 ### Step 1 — Context Retrieval
-- Retrieve relevant memory from previous steps
+Query embedding computed via TF-IDF. Top-K memories retrieved by:
+```
+score(m) = cosine(q, m) × exp(-0.1 × age_steps(m))
+```
+K=5 by default; injected as a `[CONTEXT]` prefix block.
 
 ### Step 2 — Augmented Inference
-- Inject memory into prompt
-- Generate response
+MACP-Lite envelope assembled:
+```
+[CONTEXT] {top-K memory snippets}
+[ROLE] {identity fingerprint summary}
+[TASK] {user query}
+```
+Passed to `AutoModelForCausalLM.generate()` with `max_new_tokens=512`.
 
-### Step 3 — Memory Update
-- Store useful outputs
-- Extracted facts
-- Reasoning patterns
+### Step 3 — Identity Check
+GIFP-Lite computes cosine drift between output TF-IDF vector and stored identity fingerprint.
+- `drift < 0.35` → accept, write to memory
+- `drift ≥ 0.35` → trigger refinement pass with fingerprint prepended
 
-### Step 4 — Iterative Refinement
-- Re-run model with improved context
+### Step 4 — Memory Write
+Accepted output is processed:
+- Noun-phrase extraction (regex + POS heuristic) → stored as key facts
+- Full turn stored in episodic ring-buffer
+- Ring-buffer evicts oldest entry when capacity (50) is reached
 
 ---
 
@@ -121,12 +159,31 @@ By adding structured memory and continuity:
 
 ---
 
-## 6. Expected Impact
+## 6. Benchmark Results
+
+*Results from `godelai-lite-kaggle.ipynb` v2.9 — Kernel version 6 — Kaggle GPU (Tesla P100 / CPU mode).*
+
+> **Note:** v2.9 run in progress. This section will be updated with real numbers upon completion.
+
+| Metric | Baseline (Gemma 4 only) | GodelAI-Lite (augmented) | Delta |
+|---|---|---|---|
+| Multi-turn consistency (%) | — | — | — |
+| Fact retention across turns (%) | — | — | — |
+| Identity drift score (avg) | — | — | — |
+| Refinement trigger rate (%) | — | — | — |
+| Avg inference time (s/turn) | — | — | — |
+
+**Expected impact based on architecture design:**
+- Multi-turn consistency: +15–25% vs stateless baseline
+- Fact retention: meaningful improvement after turn 3+
+- Identity drift: maintained below threshold on >90% of turns
+
+## 6b. Expected Broader Impact
 
 This approach enables:
-- Better performance from small models
+- Better performance from small models without retraining
 - Reduced dependence on large-scale compute
-- More efficient AI systems
+- More efficient AI systems deployable at the edge
 
 And introduces a broader idea:
 
@@ -160,7 +217,9 @@ GodelAI-Lite provides a practical step toward:
 
 - [MemPalace](https://github.com/milla-jovovich/mempalace) – Inspiration for structured memory systems
 - [Zenodo](https://zenodo.org/records/18048374) – GodelAI framework publication
-- AI-assisted tools (ChatGPT) used for drafting and ideation support
+- **ChatGPT (OpenAI)** – Ideation partner for GodelAI framework origin and core architecture concepts
+- **Claude Code / Claude Sonnet (Anthropic)** – Technical co-pilot throughout the Kaggle integration pipeline: architecture design, multi-session debugging (GPU v2.1–v2.9), MACP handoff protocol, genesis prompt authoring, and writeup refinement
+- Google Gemma 4 team – Base model enabling this research
 
 ---
 
