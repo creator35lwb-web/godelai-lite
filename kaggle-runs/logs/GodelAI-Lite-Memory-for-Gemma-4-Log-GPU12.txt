@@ -1,0 +1,135 @@
+6.1s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.1s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.1s 3 0.00s - to python to disable frozen modules.
+6.1s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.7s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.7s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.7s 7 0.00s - to python to disable frozen modules.
+6.7s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+10.7s 9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 94.9 MB/s eta 0:00:00
+10.7s 10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.7/383.7 kB 30.8 MB/s eta 0:00:00
+10.8s 11 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 645.5/645.5 kB 31.2 MB/s eta 0:00:00
+10.8s 12 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 114.1 MB/s eta 0:00:00
+10.9s 13 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 94.9 MB/s eta 0:00:00
+10.9s 14 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.7/383.7 kB 30.8 MB/s eta 0:00:00
+10.9s 15 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 645.5/645.5 kB 31.2 MB/s eta 0:00:00
+10.9s 16 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 114.1 MB/s eta 0:00:00
+30.2s 17 Setup complete. transformers==5.5.4
+41.7s 18 PyTorch : 2.10.0+cu128
+41.7s 19 CUDA    : True
+41.8s 20 Accelerator : GPU -- Tesla P100-PCIE-16GB
+41.8s 21 VRAM        : 17.1 GB
+41.8s 22 dtype       : float16
+41.8s 23 
+41.8s 24 Final device: cuda | dtype: torch.float16
+41.9s 25 Kaggle model path not found -- using HuggingFace download
+41.9s 26 Loading google/gemma-4-E2B-it...
+43.1s 27 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+43.1s 28 
+43.1s 29 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+88.2s 30 Loaded in 46.3s  |  device: cpu
+88.2s 31 Model      : google/gemma-4-E2B-it
+88.2s 32 Parameters : 5.10B
+88.2s 33 GodelAI-Lite = google/gemma-4-E2B-it + MemPalace-Lite v2 + MACP-Lite + GIFP-Lite v2
+88.2s 34 Baseline     = google/gemma-4-E2B-it only (zero augmentation)
+88.4s 35 Turn 1 -- inject personal facts:
+112.2s 36 Hello Alex! It's a pleasure to meet you. As a marine biologist based in Hawaii, you must have some incredible experiences.
+112.2s 37 
+112.2s 38 How can I assist you today with your work, research, or anything else?
+112.2s 39 
+112.2s 40 Turn 2 -- distractor:
+127.1s 41 The capital of France is Paris.
+127.1s 42 
+127.1s 43 Turn 3 -- memory recall:
+145.8s 44 I remember that you are Alex, a marine biologist based in Hawaii.
+145.8s 45 
+145.8s 46 Turn 4 -- context-dependent question:
+260.9s 47 Given that you are Alex, a marine biologist based in Hawaii, I have a few exciting project ideas for you! Since you're already in a world-class marine environment, we could focus on areas where Hawaii's unique ecosystem intersects with pressing global issues.
+260.9s 48 
+260.9s 49 Here are a few recommendations, dependi
+260.9s 50 
+260.9s 51 Facts stored: 7
+260.9s 52 * My name is Alex and I am a marine biologist based in Hawaii
+260.9s 53 * The capital of France is Paris
+260.9s 54 * I remember that you are Alex, a marine biologist based in Hawaii
+260.9s 55 * Given that you are Alex, a marine biologist based in Hawaii, I have a few exciti
+260.9s 56 * Here are a few recommendations, depending on your specific interests:
+260.9s 57 
+260.9s 58 1
+260.9s 59 * **Coral Reef Resilience and Restoration:** Hawaii's coral reefs are globally sig
+260.9s 60 * **Marine Debris and Plastic Pollution Impact Study:** Hawaii is vulnerable to pl
+261.1s 61 Memory saved -> /kaggle/working/godelai_memory.json  (7 facts, 8 history)
+261.1s 62 Memory loaded <- /kaggle/working/godelai_memory.json  (7 facts, 8 history)
+291.0s 63 Restored agent: I apologize, but I do not have a record of you telling me your name in our previous conversation. Could you please remind me of your name?
+291.2s 64 ============================================================
+291.2s 65 EVALUATION: GodelAI-Lite vs Baseline Gemma
+291.2s 66 ============================================================
+291.2s 67 
+291.2s 68 Test 1/3 -- Memory Retention
+643.7s 69 [GodelAI-Lite] What is my name and profession?: FAIL
+670.0s 70 [GodelAI-Lite] Where do I work?: FAIL
+701.2s 71 [GodelAI-Lite] What am I currently researching?: FAIL
+1092.3s 72 [Baseline] What is my name and profession?: FAIL
+1101.0s 73 [Baseline] Where do I work?: FAIL
+1114.9s 74 [Baseline] What am I currently researching?: FAIL
+1114.9s 75 
+1114.9s 76 Test 2/3 -- Response Consistency
+1641.2s 77 [GodelAI-Lite] TF-IDF cosine avg: 0.4123
+2142.9s 78 [Baseline] TF-IDF cosine avg: 0.6526
+2142.9s 79 
+2142.9s 80 Test 3/3 -- Context Coherence
+2366.4s 81 [GodelAI-Lite] What outdoor activities suit my lifestyle?: PASS
+2448.7s 82 [GodelAI-Lite] What should I consider when naming my next pe: PASS
+2574.0s 83 [GodelAI-Lite] What technical skills should I focus on first: PASS
+2867.7s 84 [Baseline] What outdoor activities suit my lifestyle?: PASS
+2967.6s 85 [Baseline] What should I consider when naming my next pe: PASS
+3067.5s 86 [Baseline] What technical skills should I focus on first: PASS
+3067.5s 87 
+3067.5s 88 =================================================================
+3067.5s 89 GODELAI-LITE vs BASELINE GEMMA 4 -- RESULTS
+3067.5s 90 =================================================================
+3067.5s 91 Metric                      Baseline   GodelAI-Lite      Delta
+3067.5s 92 -----------------------------------------------------------------
+3067.5s 93 Memory Retention               0.000          0.000      +inf%
+3067.5s 94 Response Consistency           0.653          0.412     -36.8%
+3067.5s 95 Context Coherence              1.000          1.000      +0.0%
+3067.5s 96 -----------------------------------------------------------------
+3067.5s 97 OVERALL AVERAGE                0.551          0.471     -14.5%
+3067.5s 98 =================================================================
+3067.5s 99 ============================================================
+3067.5s 100 GODELAI-LITE v2.15 -- ARCHITECTURE SUMMARY
+3067.5s 101 ============================================================
+3067.5s 102 
+3067.5s 103 MemPalace-Lite v2   [Memory Layer]
+3067.5s 104 + Temporal decay (exponential relevance fade)
+3067.5s 105 + Pattern-based fact extraction
+3067.5s 106 + Disk persistence (JSON save/load)
+3067.5s 107 + Deduplication
+3067.5s 108 
+3067.5s 109 MACP-Lite           [Continuity Layer]
+3067.5s 110 + Structured reasoning chain per turn
+3067.5s 111 + Confidence tracking
+3067.5s 112 
+3067.5s 113 GIFP-Lite v2        [Identity Layer]
+3067.5s 114 + TF-IDF cosine consistency
+3067.5s 115 + Hard contradiction penalty
+3067.5s 116 
+3067.5s 117 EvaluationSuite     [Measurement]
+3067.5s 118 + Keyword fast-path + TF-IDF cosine semantic fallback
+3067.5s 119 + Threshold 0.25 against source fact/context string
+3067.5s 120 
+3067.5s 121 Base Model          Gemma 4  (zero fine-tuning)
+3067.5s 122 Accelerator         TPU v5e-8 (bfloat16)  |  GPU T4 (float16)  |  CPU (bfloat16, E2B primary)
+3067.5s 123 Dependencies        torch, transformers, scikit-learn, numpy
+3067.5s 124 
+3067.5s 125 Ecosystem: GodelAI-Lite closes the inference-time memory gap.
+3067.5s 126 GodelAI (main) closes the training-time memory gap.
+3067.5s 127 Together: complete two-layer memory for continual AI.
+3072.6s 128 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+3072.6s 129 cells[i][c] = re.sub('\\\\\|', '|', cell)
+3072.7s 130 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+3072.7s 131 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+3073.3s 132 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+3073.7s 133 [NbConvertApp] Writing 136334 bytes to __notebook__.ipynb
+3076.0s 134 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+3076.9s 135 [NbConvertApp] Writing 490071 bytes to __results__.html
