@@ -259,7 +259,7 @@ GodelAI-Lite provides a practical step toward:
 ## 10. Code
 
 The full implementation is available in:
-- `godelai-lite-kaggle.ipynb` — Complete working notebook (v2.15, Kernel v12)
+- `godelai-lite-kaggle.ipynb` — Complete working notebook (v2.16, Kernel v14)
 - `mempalace/` — Standalone Python package extracted from the notebook (v0.1.0)
   - `from mempalace import GodelAILite, MemPalaceLite` — works with any HuggingFace causal LM
 
