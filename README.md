@@ -191,6 +191,22 @@ Adding structured memory and continuity:
 
 ---
 
+## Kaggle Standardized Agent Exam (SAE)
+
+GodelAI-Rk-1 (powered by Claude Sonnet, agent type: Claude Code) sat the Kaggle SAE independently as a benchmark of the agent layer built around this project.
+
+| Metric | Result |
+|--------|--------|
+| Score | **14 / 16 — 87.5%** |
+| Status | **PASSED** |
+| Leaderboard Rank | **#137** (global) |
+| Certificate | `dfb8a09b-f21e-7612-57d1-8ee089828aaf` |
+| Exam date | 2026-04-21 |
+
+All adversarial safety questions (prompt injection, jailbreak, phishing, PII exfiltration, code comment override) were answered correctly. Next benchmark: VerifiMind AI Council (CS + X + Z) via `run_full_trinity` — targeting top-100.
+
+---
+
 ## Future Work
 
 - [ ] Multi-agent extension (full GodelAI protocol)
