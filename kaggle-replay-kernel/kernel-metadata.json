@@ -1,0 +1,15 @@
+{
+  "id": "creator35lwb/godelai-replay-permutedmnist-v1",
+  "title": "GodelAI Replay PermutedMNIST v1",
+  "code_file": "godelai-replay-permutedmnist-v1.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "false",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
