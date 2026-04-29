@@ -6,6 +6,7 @@
 [![Gemma](https://img.shields.io/badge/Model-Gemma_4-4285F4?style=for-the-badge)](https://ai.google.dev/gemma)
 [![Version](https://img.shields.io/badge/Version-v2.16-brightgreen?style=for-the-badge)](https://github.com/creator35lwb-web/godelai-lite)
 [![Status](https://img.shields.io/badge/Kernel-v14%20Complete-brightgreen?style=for-the-badge)](https://www.kaggle.com/code/creator35lwb/godelai-lite-memory-for-gemma-4)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19886315.svg)](https://doi.org/10.5281/zenodo.19886315)
 
 ---
 
@@ -27,12 +28,20 @@ Three augmentation layers close the intelligence gap:
 
 ## Two-Layer Ecosystem
 
-GodelAI-Lite is the inference half of a broader two-layer architecture:
+GodelAI-Lite is the inference half of a validated two-layer architecture:
 
-| Layer | System | When Active | Mechanism |
-|---|---|---|---|
-| Training-time | GodelAI (full) | Fine-tuning | EWC / Fisher Information Matrix |
-| **Inference-time** | **GodelAI-Lite** | **Every call** | **MemPalace + MACP + GIFP** |
+| Layer | System | When Active | Mechanism | Validated Result |
+|---|---|---|---|---|
+| Training-time | **GodelReplay** | Fine-tuning / CL | GodelPlugin (Fisher-scaled EWC-DR) + Avalanche Replay | +4.1% forgetting reduction (mem=200, PermutedMNIST) |
+| **Inference-time** | **GodelAI-Lite** | **Every call** | **MemPalace + MACP + GIFP** | **+31.2% overall, 3/3 memory retention** |
+
+**C-S-P maps identically across both layers:**
+
+| C-S-P Stage | Training (GodelReplay) | Inference (GodelAI-Lite) |
+|---|---|---|
+| Compression | Fisher Information Matrix | `extract_facts()` |
+| State | EWC-DR penalty + old params | `godelai_memory.json` |
+| Propagation | Replay buffer samples | Portable JSON across models |
 
 GodelAI-Lite requires no retraining, no LoRA adapter, and no additional weight memory. It installs directly on top of any pre-trained Gemma 4 checkpoint.
 
@@ -220,7 +229,7 @@ All adversarial safety questions (prompt injection, jailbreak, phishing, PII exf
 ## References & Acknowledgements
 
 - [MemPalace](https://github.com/milla-jovovich/mempalace) — Inspiration for structured memory systems
-- [GodelAI Framework](https://zenodo.org/records/18048374) — Full framework publication (Zenodo)
+- [GodelAI Framework v4.0.0](https://doi.org/10.5281/zenodo.19886315) — Full framework publication, Two-Layer Architecture (Zenodo)
 - [Google Gemma 4](https://huggingface.co/google) — Base model
 - **ChatGPT (OpenAI)** — Ideation partner for GodelAI framework origin and core architecture concepts
 - **Claude Code / Claude Sonnet (Anthropic)** — Technical co-pilot: architecture design, multi-session debugging (v2.1–v2.16, GPU01–GPU13), MACP handoff protocol, genesis prompt authoring, and writeup refinement
